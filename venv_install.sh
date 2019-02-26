@@ -9,6 +9,12 @@ for tool in "${dependencies[@]}"; do
     fi
 done
 
+cd src
+git clone https://github.com/cjlin1/libsvm
+cd libsvm/python
+make
+cd ../../../
+
 virtualenv -p python3 venv
 source venv/bin/activate
 python3 setup.py develop
