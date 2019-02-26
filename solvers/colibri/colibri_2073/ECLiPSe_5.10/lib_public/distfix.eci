@@ -1,3 +1,0 @@
-:- module(distfix).
-:- export read / 2.
-:- export distfixop / 4.
