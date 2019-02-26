@@ -1,0 +1,6 @@
+% UNSAT
+real_vars(double,[X,Y,Z,Res]),
+X^2 $>= minNormDouble,
+Res $= X/sqrt(X^2+Y^2+Z^2),
+% REFUTED GOAL
+neg((Res $>= -1) and (Res $=< 1)).

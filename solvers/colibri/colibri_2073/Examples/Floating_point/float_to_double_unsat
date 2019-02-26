@@ -1,0 +1,8 @@
+% UNSAT
+real_vars(float,X),real_vars(double,Tmp),
+X $>= floatFirst,
+X $=< floatLast,
+Tmp $= double_from_float(X),
+% REFUTED GOAL
+neg((Tmp $>= double_from_float(floatFirst)) and 
+    (Tmp $=< double_from_float(floatLast))).

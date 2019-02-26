@@ -1,0 +1,7 @@
+:- module(mip).
+:- export bb_inf / 4.
+:- export bb_inf / 3.
+:- comment(summary, "An example implementing MIP-style branch-and-bound").
+:- comment(author, "Joachim Schimpf, IC-Parc").
+:- comment(date, "$Date: 2006/09/23 01:53:51 $").
+:- comment(copyright, "Cisco Systems, Inc.").

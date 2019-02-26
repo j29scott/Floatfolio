@@ -1,0 +1,24 @@
+% SAT
+
+%int_vars(uint(4),[X,Y,Z,T]),
+int_vars(bv(4),[X,Y,Z,T]),
+
+
+xorb(Z,7) #= (X /\ Y) \/ (T /\ Y), 
+xorb(Y,X) #= 7,
+T /\ X 	  #= 2 << 1,
+xorb(Z,T) #= 12 >> 2,
+T \/ X    #= 4.
+xorb(X,Y) #= Z,
+bv_label([X,Y,Z,T]).
+
+ 
+
+% From Popop
+/*
+      a-  z ⊕ 1101 = (x & y) | (t & y)
+      b-  y ⊕ x = 110
+      c-  t & x = 100
+      d-  z ⊕ t = 010
+      e-   t = 100
+    */

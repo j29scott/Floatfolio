@@ -1,0 +1,5 @@
+% SAT
+real_vars(real, Tenth),
+Tenth $= real_from_int(1) / real_from_int(10),
+% REFUTED GOAL
+neg(Tenth $= 0.1).

@@ -1,0 +1,21 @@
+<HTML><HEAD><TITLE>set_default_int_bounds(Low,High)</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>set_default_int_bounds(Low,High)</H1>
+Default range for int variables
+<DL>
+<DT><EM>Low</EM></DT>
+<DD>An integer value strictly smaller than High.
+</DD>
+<DT><EM>High</EM></DT>
+<DD>An integer value strictly greater than Low.
+</DD>
+</DL>
+<H2>Description</H2>
+Variables of type int will have as default range Low..High. Remark that the default initial range is set to -2^51..2^51-1 to cope with some limits of the integrated simplex (eplex)
+<H3>Fail Conditions</H3>
+Fails if Low and High are not integer values such that Low is strictly smaller thant High.
+<H3>Resatisfiable</H3>
+no
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">int_vars / 2</A>
+</BODY></HTML>

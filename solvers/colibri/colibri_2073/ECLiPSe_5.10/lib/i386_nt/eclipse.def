@@ -1,0 +1,364 @@
+EXPORTS
+    add_attribute @1
+    bind_c @2
+    cut_external @3
+    dbformat_to_term @4
+    ec_ @5 DATA
+    ec_arg@4 @6
+    ec_arity@8 @7
+    ec_arrayofdouble@8 @8
+    ec_assign @9
+    ec_atom@4 @10
+    ec_cleanup@0 @11
+    ec_compare@16 @12
+    ec_cut_to_chp@4 @13
+    ec_did@8 @14
+    ec_double@8 @15
+    ec_double_to_int_or_bignum @16
+    ec_double_xdr@8 @17
+    ec_enter_suspension @18
+    ec_error_string@4 @19
+    ec_exec_string@8 @20
+    ec_external @21
+    ec_flush @22
+    ec_fpu_control_orig_ @23 DATA
+    ec_free_handle@12 @24
+    ec_get_arg@16 @25
+    ec_get_atom@12 @26
+    ec_get_double@12 @27
+    ec_get_functor@12 @28
+    ec_get_handle@16 @29
+    ec_get_list@16 @30
+    ec_get_long@12 @31
+    ec_get_nil@8 @32
+    ec_get_string@12 @33
+    ec_get_string_length@16 @34
+    ec_handle@8 @35
+    ec_handle_events@4 @36
+    ec_i_add @37
+    ec_i_div @38
+    ec_i_mul @39
+    ec_i_sub @40
+    ec_init@0 @41
+    ec_int32_xdr@8 @42
+    ec_is_var@8 @43
+    ec_length_string@8 @44
+    ec_list@16 @45
+    ec_listofchar@8 @46
+    ec_listofdouble@8 @47
+    ec_listoflong@8 @48
+    ec_listofrefs@4 @49
+    ec_long@4 @50
+    ec_make_suspension@20 @51
+    ec_matrixofdouble@12 @52
+    ec_newline @53
+    ec_newvar@0 @54
+    ec_nil@0 @55
+    ec_outf @56
+    ec_panic @57
+    ec_post_event@8 @58
+    ec_post_event_int@4 @59
+    ec_post_event_string@4 @60
+    ec_post_exdr@8 @61
+    ec_post_goal@8 @62
+    ec_post_string@4 @63
+    ec_queue_avail@4 @64
+    ec_queue_read@12 @65
+    ec_queue_write@12 @66
+    ec_ref_create@8 @67
+    ec_ref_create_newvar@0 @68
+    ec_ref_destroy@4 @69
+    ec_ref_get@4 @70
+    ec_ref_set@12 @71
+    ec_refs_create@12 @72
+    ec_refs_create_newvars@4 @73
+    ec_refs_destroy@4 @74
+    ec_refs_get@8 @75
+    ec_refs_set@16 @76
+    ec_refs_size@4 @77
+    ec_remember @78
+    ec_resume1@4 @79
+    ec_resume2@12 @80
+    ec_resume@0 @81
+    ec_resume_async@0 @82
+    ec_resume_long@4 @83
+    ec_resume_status@0 @84
+    ec_resume_status_long@4 @85
+    ec_running@0 @86
+    ec_schedule_suspensions@12 @87
+    ec_schedule_susps @88
+    ec_set_option_int@8 @89
+    ec_set_option_long@8 @90
+    ec_set_option_ptr@8 @91
+    ec_stream_id@4 @92
+    ec_stream_nr@4 @93
+    ec_string@4 @94
+    ec_term @95
+    ec_term_array@8 @96
+    ec_trail_pwords @97
+    ec_trail_undo @98
+    ec_unify@16 @99
+    ec_unify_ @100
+    ec_unify_arg@12 @101
+    ec_var_lookup@12 @102
+    ec_visible_procedure@16 @103
+    ec_wait_resume_status_long@8 @104
+    ec_xdr_double@8 @105
+    ec_xdr_int32@8 @106
+    ec_xt_char_arr @107 DATA
+    ec_xt_double_arr @108 DATA
+    ec_xt_long_arr @109 DATA
+    global_ov @110
+    insert_suspension @111
+    meta_index @112
+    notify_constrained @113
+    os_filename @114
+    p_fprintf @115
+    p_handle_free @116
+    p_merge_suspension_lists @117
+    p_schedule_postponed @118
+    p_set_suspension_priority @119
+    schedule_cut_fail_action @120
+    sub_emulc_noexit @121
+    term_to_dbformat @122
+    trail_ov @123
+    trail_undo @124
+    unary_arith_op @125
+
+IMPORTS
+
+    gmp33.dll.__gmp_allocate_func
+    gmp33.dll.__gmp_assert_fail
+    gmp33.dll.__gmp_bits_per_limb
+    gmp33.dll.__gmp_errno
+    gmp33.dll.__gmp_free_func
+    gmp33.dll.__gmp_modlimb_invert_table
+    gmp33.dll.__gmp_rand
+    gmp33.dll.__gmp_randclear
+    gmp33.dll.__gmp_randinit
+    gmp33.dll.__gmp_randinit_default
+    gmp33.dll.__gmp_randinit_lc
+    gmp33.dll.__gmp_randinit_lc_2exp
+    gmp33.dll.__gmp_randinit_lc_2exp_size
+    gmp33.dll.__gmp_rands
+    gmp33.dll.__gmp_rands_initialized
+    gmp33.dll.__gmp_randseed
+    gmp33.dll.__gmp_randseed_ui
+    gmp33.dll.__gmp_reallocate_func
+    gmp33.dll.__gmp_set_memory_functions
+    gmp33.dll.__gmpn_add
+    gmp33.dll.__gmpn_add_1
+    gmp33.dll.__gmpn_add_n
+    gmp33.dll.__gmpn_addmul_1
+    gmp33.dll.__gmpn_addsub_n
+    gmp33.dll.__gmpn_bases
+    gmp33.dll.__gmpn_bdivmod
+    gmp33.dll.__gmpn_clz_tab
+    gmp33.dll.__gmpn_cmp
+    gmp33.dll.__gmpn_divexact_by3c
+    gmp33.dll.__gmpn_divrem
+    gmp33.dll.__gmpn_divrem_1
+    gmp33.dll.__gmpn_divrem_2
+    gmp33.dll.__gmpn_dump
+    gmp33.dll.__gmpn_gcd
+    gmp33.dll.__gmpn_gcd_1
+    gmp33.dll.__gmpn_gcdext
+    gmp33.dll.__gmpn_get_str
+    gmp33.dll.__gmpn_hamdist
+    gmp33.dll.__gmpn_lshift
+    gmp33.dll.__gmpn_mod_1
+    gmp33.dll.__gmpn_mul
+    gmp33.dll.__gmpn_mul_1
+    gmp33.dll.__gmpn_mul_basecase
+    gmp33.dll.__gmpn_mul_n
+    gmp33.dll.__gmpn_perfect_square_p
+    gmp33.dll.__gmpn_popcount
+    gmp33.dll.__gmpn_preinv_mod_1
+    gmp33.dll.__gmpn_random
+    gmp33.dll.__gmpn_random2
+    gmp33.dll.__gmpn_rshift
+    gmp33.dll.__gmpn_scan0
+    gmp33.dll.__gmpn_scan1
+    gmp33.dll.__gmpn_set_str
+    gmp33.dll.__gmpn_sqr_basecase
+    gmp33.dll.__gmpn_sqr_n
+    gmp33.dll.__gmpn_sqrtrem
+    gmp33.dll.__gmpn_sub
+    gmp33.dll.__gmpn_sub_1
+    gmp33.dll.__gmpn_sub_n
+    gmp33.dll.__gmpn_submul_1
+    gmp33.dll.__gmpn_tdiv_qr
+    gmp33.dll.__gmpq_abs
+    gmp33.dll.__gmpq_add
+    gmp33.dll.__gmpq_canonicalize
+    gmp33.dll.__gmpq_clear
+    gmp33.dll.__gmpq_cmp
+    gmp33.dll.__gmpq_cmp_si
+    gmp33.dll.__gmpq_cmp_ui
+    gmp33.dll.__gmpq_div
+    gmp33.dll.__gmpq_div_2exp
+    gmp33.dll.__gmpq_equal
+    gmp33.dll.__gmpq_get_d
+    gmp33.dll.__gmpq_get_den
+    gmp33.dll.__gmpq_get_num
+    gmp33.dll.__gmpq_get_str
+    gmp33.dll.__gmpq_init
+    gmp33.dll.__gmpq_inp_str
+    gmp33.dll.__gmpq_inv
+    gmp33.dll.__gmpq_mul
+    gmp33.dll.__gmpq_mul_2exp
+    gmp33.dll.__gmpq_neg
+    gmp33.dll.__gmpq_out_str
+    gmp33.dll.__gmpq_set
+    gmp33.dll.__gmpq_set_d
+    gmp33.dll.__gmpq_set_den
+    gmp33.dll.__gmpq_set_f
+    gmp33.dll.__gmpq_set_num
+    gmp33.dll.__gmpq_set_si
+    gmp33.dll.__gmpq_set_str
+    gmp33.dll.__gmpq_set_ui
+    gmp33.dll.__gmpq_set_z
+    gmp33.dll.__gmpq_sub
+    gmp33.dll.__gmpq_swap
+    gmp33.dll.__gmpz_abs
+    gmp33.dll.__gmpz_add
+    gmp33.dll.__gmpz_add_ui
+    gmp33.dll.__gmpz_addmul
+    gmp33.dll.__gmpz_addmul_ui
+    gmp33.dll.__gmpz_and
+    gmp33.dll.__gmpz_array_init
+    gmp33.dll.__gmpz_bin_ui
+    gmp33.dll.__gmpz_bin_uiui
+    gmp33.dll.__gmpz_cdiv_q
+    gmp33.dll.__gmpz_cdiv_q_2exp
+    gmp33.dll.__gmpz_cdiv_q_ui
+    gmp33.dll.__gmpz_cdiv_qr
+    gmp33.dll.__gmpz_cdiv_qr_ui
+    gmp33.dll.__gmpz_cdiv_r
+    gmp33.dll.__gmpz_cdiv_r_2exp
+    gmp33.dll.__gmpz_cdiv_r_ui
+    gmp33.dll.__gmpz_cdiv_ui
+    gmp33.dll.__gmpz_clear
+    gmp33.dll.__gmpz_clrbit
+    gmp33.dll.__gmpz_cmp
+    gmp33.dll.__gmpz_cmp_d
+    gmp33.dll.__gmpz_cmp_si
+    gmp33.dll.__gmpz_cmp_ui
+    gmp33.dll.__gmpz_cmpabs
+    gmp33.dll.__gmpz_cmpabs_d
+    gmp33.dll.__gmpz_cmpabs_ui
+    gmp33.dll.__gmpz_com
+    gmp33.dll.__gmpz_congruent_2exp_p
+    gmp33.dll.__gmpz_congruent_p
+    gmp33.dll.__gmpz_congruent_ui_p
+    gmp33.dll.__gmpz_divexact
+    gmp33.dll.__gmpz_divexact_ui
+    gmp33.dll.__gmpz_divisible_2exp_p
+    gmp33.dll.__gmpz_divisible_p
+    gmp33.dll.__gmpz_divisible_ui_p
+    gmp33.dll.__gmpz_dump
+    gmp33.dll.__gmpz_fac_ui
+    gmp33.dll.__gmpz_fdiv_q
+    gmp33.dll.__gmpz_fdiv_q_2exp
+    gmp33.dll.__gmpz_fdiv_q_ui
+    gmp33.dll.__gmpz_fdiv_qr
+    gmp33.dll.__gmpz_fdiv_qr_ui
+    gmp33.dll.__gmpz_fdiv_r
+    gmp33.dll.__gmpz_fdiv_r_2exp
+    gmp33.dll.__gmpz_fdiv_r_ui
+    gmp33.dll.__gmpz_fdiv_ui
+    gmp33.dll.__gmpz_fib2_ui
+    gmp33.dll.__gmpz_fib_ui
+    gmp33.dll.__gmpz_fits_sint_p
+    gmp33.dll.__gmpz_fits_slong_p
+    gmp33.dll.__gmpz_fits_sshort_p
+    gmp33.dll.__gmpz_fits_uint_p
+    gmp33.dll.__gmpz_fits_ulong_p
+    gmp33.dll.__gmpz_fits_ushort_p
+    gmp33.dll.__gmpz_gcd
+    gmp33.dll.__gmpz_gcd_ui
+    gmp33.dll.__gmpz_gcdext
+    gmp33.dll.__gmpz_get_d
+    gmp33.dll.__gmpz_get_d_2exp
+    gmp33.dll.__gmpz_get_si
+    gmp33.dll.__gmpz_get_str
+    gmp33.dll.__gmpz_get_ui
+    gmp33.dll.__gmpz_getlimbn
+    gmp33.dll.__gmpz_hamdist
+    gmp33.dll.__gmpz_init
+    gmp33.dll.__gmpz_init2
+    gmp33.dll.__gmpz_init_set
+    gmp33.dll.__gmpz_init_set_d
+    gmp33.dll.__gmpz_init_set_si
+    gmp33.dll.__gmpz_init_set_str
+    gmp33.dll.__gmpz_init_set_ui
+    gmp33.dll.__gmpz_inp_raw
+    gmp33.dll.__gmpz_inp_str
+    gmp33.dll.__gmpz_invert
+    gmp33.dll.__gmpz_ior
+    gmp33.dll.__gmpz_jacobi
+    gmp33.dll.__gmpz_kronecker_si
+    gmp33.dll.__gmpz_kronecker_ui
+    gmp33.dll.__gmpz_lcm
+    gmp33.dll.__gmpz_lcm_ui
+    gmp33.dll.__gmpz_lucnum2_ui
+    gmp33.dll.__gmpz_lucnum_ui
+    gmp33.dll.__gmpz_millerrabin
+    gmp33.dll.__gmpz_mod
+    gmp33.dll.__gmpz_mul
+    gmp33.dll.__gmpz_mul_2exp
+    gmp33.dll.__gmpz_mul_si
+    gmp33.dll.__gmpz_mul_ui
+    gmp33.dll.__gmpz_neg
+    gmp33.dll.__gmpz_nextprime
+    gmp33.dll.__gmpz_out_raw
+    gmp33.dll.__gmpz_out_str
+    gmp33.dll.__gmpz_perfect_power_p
+    gmp33.dll.__gmpz_perfect_square_p
+    gmp33.dll.__gmpz_popcount
+    gmp33.dll.__gmpz_pow_ui
+    gmp33.dll.__gmpz_powm
+    gmp33.dll.__gmpz_powm_ui
+    gmp33.dll.__gmpz_probab_prime_p
+    gmp33.dll.__gmpz_random
+    gmp33.dll.__gmpz_random2
+    gmp33.dll.__gmpz_realloc
+    gmp33.dll.__gmpz_realloc2
+    gmp33.dll.__gmpz_remove
+    gmp33.dll.__gmpz_root
+    gmp33.dll.__gmpz_rrandomb
+    gmp33.dll.__gmpz_scan0
+    gmp33.dll.__gmpz_scan1
+    gmp33.dll.__gmpz_set
+    gmp33.dll.__gmpz_set_d
+    gmp33.dll.__gmpz_set_f
+    gmp33.dll.__gmpz_set_q
+    gmp33.dll.__gmpz_set_si
+    gmp33.dll.__gmpz_set_str
+    gmp33.dll.__gmpz_set_ui
+    gmp33.dll.__gmpz_setbit
+    gmp33.dll.__gmpz_si_kronecker
+    gmp33.dll.__gmpz_size
+    gmp33.dll.__gmpz_sizeinbase
+    gmp33.dll.__gmpz_sqrt
+    gmp33.dll.__gmpz_sqrtrem
+    gmp33.dll.__gmpz_sub
+    gmp33.dll.__gmpz_sub_ui
+    gmp33.dll.__gmpz_submul
+    gmp33.dll.__gmpz_submul_ui
+    gmp33.dll.__gmpz_swap
+    gmp33.dll.__gmpz_tdiv_q
+    gmp33.dll.__gmpz_tdiv_q_2exp
+    gmp33.dll.__gmpz_tdiv_q_ui
+    gmp33.dll.__gmpz_tdiv_qr
+    gmp33.dll.__gmpz_tdiv_qr_ui
+    gmp33.dll.__gmpz_tdiv_r
+    gmp33.dll.__gmpz_tdiv_r_2exp
+    gmp33.dll.__gmpz_tdiv_r_ui
+    gmp33.dll.__gmpz_tdiv_ui
+    gmp33.dll.__gmpz_tstbit
+    gmp33.dll.__gmpz_ui_kronecker
+    gmp33.dll.__gmpz_ui_pow_ui
+    gmp33.dll.__gmpz_urandomb
+    gmp33.dll.__gmpz_urandomm
+    gmp33.dll.__gmpz_xor

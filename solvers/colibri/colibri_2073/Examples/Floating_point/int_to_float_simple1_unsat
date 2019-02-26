@@ -1,0 +1,8 @@
+% UNSAT
+int_vars(uint(16),[X]),
+real_vars(float,[L,Res]),
+L $= 7.3526e6,
+X #\= 0,
+Res $= L/float_from_int(X),
+% REFUTED GOAL
+neg(float_from_int(X) $>= 0.9).

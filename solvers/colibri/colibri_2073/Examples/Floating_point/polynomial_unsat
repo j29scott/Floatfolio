@@ -1,0 +1,6 @@
+% UNSAT
+real_vars(double,[X,R]),
+X $: 0.0 .. 60.0,
+R $= (((X + 2.0) * X + 3.0) + 4.0) * X + 5.0,
+% REFUTED GOAL
+neg((-1.0Inf $< R) and (R $< 1.0Inf)).

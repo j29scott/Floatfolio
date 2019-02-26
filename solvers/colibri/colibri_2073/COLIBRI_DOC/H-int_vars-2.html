@@ -1,0 +1,30 @@
+<HTML><HEAD><TITLE>int_vars(Type,Vars)</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>int_vars(Type,Vars)</H1>
+Typing constraints for "integer" variables Vars.
+<DL>
+<DT><EM>Type</EM></DT>
+<DD>Integer type among int, int(N) and uint(N) (where N is a positive integer defining the size in bits for signed/unsigned integers).
+</DD>
+<DT><EM>Vars</EM></DT>
+<DD>A variable or a list of variables.
+</DD>
+</DL>
+<H2>Description</H2>
+Variables in Vars are constrained to have the type Type. For int type this means that Vars belong to the default integer range (-2^51..2^51-1). For int(N) type this means that Vars belong to -2^(N-1)..2^(N-1)-1. For uint(N) type this means that Vars belong to 0..(2^N)-1
+<H3>Fail Conditions</H3>
+Fails if some variable in Vars cannot have the defined type.
+<H3>Resatisfiable</H3>
+no
+<H2>Examples</H2>
+<PRE>
+Succes:
+  int_vars(int(8),X).
+  (gives  X = _868{[-128 .. 127]})
+
+Fail:
+  int_vars(int(8),X),int_vars(uint(8),X)
+</PRE>
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">#: / 2</A>, <A HREF="../COLIBRI_DOC/index.html">set_default_int_bounds / 2</A>
+</BODY></HTML>

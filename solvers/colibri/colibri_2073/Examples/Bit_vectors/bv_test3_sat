@@ -1,0 +1,14 @@
+% SAT
+
+%int_vars(uint(2),[X,Y,Z,T]),
+
+int_vars(bv(2),[X,Y,Z,T]),
+
+1 #= bvand(2,bvand(2,X,Y),bvand(2,Z,T)),
+bv_label([X,Y,Z,T]).
+
+
+
+
+yntax error on integer/boolean expression : ColVar#3{mbv : (0).??, mfd : [0 .. 3]} /\ ColVar#2{mbv : (0).??, mfd : [0 .. 3]} /\ ColVar#1{mbv : (0).??, mfd : [0 .. 3]} /\ ColVar#0{mbv : (0).??, mfd : [0 .. 3]}
+ERROR(./Examples/Bit_vectors/bv_test3_sat) : syntax

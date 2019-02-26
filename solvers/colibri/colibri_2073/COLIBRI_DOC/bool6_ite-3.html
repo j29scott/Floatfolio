@@ -1,0 +1,20 @@
+<HTML><HEAD><TITLE>ite(Cond,Then,Else)</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>ite(Cond,Then,Else)</H1>
+if Cond then Then else Else.
+<DL>
+<DT><EM>Cond</EM></DT>
+<DD>A "boolean" integer term (range 0..1).
+</DD>
+<DT><EM>Then</EM></DT>
+<DD>A "boolean" integer term (range 0..1).
+</DD>
+<DT><EM>Else</EM></DT>
+<DD>A "boolean" integer term (range 0..1).
+</DD>
+</DL>
+<H2>Description</H2>
+Equivalent to the expression (Cond =&gt; Then) and (neg(Cond) =&gt; Else). This constraints exists also in a reified form, it(Cond,Then,Else) #= Bool, where Bool is an int variable ranging in 0..1.
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">neg / 2</A>, <A HREF="../COLIBRI_DOC/index.html">and / 2</A>, <A HREF="../COLIBRI_DOC/index.html">or / 2</A>, <A HREF="../COLIBRI_DOC/index.html">xor / 2</A>, <A HREF="../COLIBRI_DOC/index.html">=> / 2</A>
+</BODY></HTML>

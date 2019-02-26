@@ -1,0 +1,6 @@
+:- module(order).
+:- export ordered / 3.
+:- export ordered / 2.
+:- export ordered / 1.
+:- tool(ordered / 2,ordered / 3).
+:- comment(ordered / 3, hidden).

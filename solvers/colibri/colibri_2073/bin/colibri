@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec $(dirname $0)/../smt_colibri_local_linux.sh "$@"
+ 

@@ -1,0 +1,7 @@
+% UNSAT
+real_vars(float,[State0,State]),
+int_vars(int(32),[X]), X #>= 0, X #< 1000000,
+( (State0 $= 0.0) or ((State0 $>= 10.0) and (State0 $=< float_from_int(X)*10.0))),
+State $= State0 + 10.0,
+% REFUTED GOAL
+neg((State $>= 10.0) and (State $=< float_from_int(X+1)*10.0)).

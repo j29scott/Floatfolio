@@ -1,0 +1,7 @@
+#!/mnt/c/Users/joe/Desktop/Floatfolio/venv/bin/python3
+# EASY-INSTALL-DEV-SCRIPT: 'floatfolio==0.1','floatfolio'
+__requires__ = 'floatfolio==0.1'
+__import__('pkg_resources').require('floatfolio==0.1')
+__file__ = '/mnt/c/Users/joe/Desktop/Floatfolio/bin/floatfolio'
+with open(__file__) as f:
+    exec(compile(f.read(), __file__, 'exec'))

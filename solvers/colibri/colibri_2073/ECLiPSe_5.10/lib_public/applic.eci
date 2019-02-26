@@ -1,0 +1,42 @@
+:- module(applic).
+:- export sublist / 4.
+:- export somechk / 3.
+:- export some / 3.
+:- export exclude / 4.
+:- export convlist / 4.
+:- export maplist / 4.
+:- export mapand / 4.
+:- export checklist / 3.
+:- export checkand / 3.
+:- export apply / 3.
+:- export sublist / 3.
+:- export somechk / 2.
+:- export some / 2.
+:- export maplist / 3.
+:- export mapand / 3.
+:- export exclude / 3.
+:- export convlist / 3.
+:- export checklist / 2.
+:- export checkand / 2.
+:- export callable / 1.
+:- export apply / 2.
+:- tool(sublist / 3,sublist / 4).
+:- tool(somechk / 2,somechk / 3).
+:- tool(some / 2,some / 3).
+:- tool(maplist / 3,maplist / 4).
+:- tool(mapand / 3,mapand / 4).
+:- tool(exclude / 3,exclude / 4).
+:- tool(convlist / 3,convlist / 4).
+:- tool(checklist / 2,checklist / 3).
+:- tool(checkand / 2,checkand / 3).
+:- tool(apply / 2,apply / 3).
+:- comment(sublist / 4, hidden).
+:- comment(somechk / 3, hidden).
+:- comment(some / 3, hidden).
+:- comment(maplist / 4, hidden).
+:- comment(mapand / 4, hidden).
+:- comment(exclude / 4, hidden).
+:- comment(convlist / 4, hidden).
+:- comment(checklist / 3, hidden).
+:- comment(checkand / 3, hidden).
+:- comment(apply / 3, hidden).

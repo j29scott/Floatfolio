@@ -1,0 +1,393 @@
+<HTML><HEAD><TITLE> Arithmetic operators</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1> Arithmetic operators</H1>
+Operators allowed in numerical expressions.
+<H2>Description</H2>
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title></title>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <b><br>
+      Arithmetic expressions</b><b><br>
+    </b><br>
+    The following arithmetic operations are available to build Integer
+    and Real expressions.<br>
+    Integer types are <i>int</i> for bounded integers, <i>int(N)</i>
+    for signed integers of N bits, <i>uint(N)</i> for unsigned integers
+    of N bits.<br>
+    Real types are <i>real</i>, <i>float</i> for 32 bits floating
+    point numbers, <i>double</i> for 64 bits floating point numbers.<br>
+    <i>Real</i> operations are rounded outward (toward -1.0Inf for lower
+    bound and toward 1.0Inf for upper bound).<br>
+    <i>Float</i> and <i>double</i> operations are rounded to the
+    nearest even float or double.<br>
+    E, E1 and E2 stand for arbitrary arithmetic expressions, <i>number</i>
+    stands for any numeriacal type above.<br>
+    <br>
+    <br>
+    <table border="1" cellpadding="2" cellspacing="2" height="814"
+      width="905">
+      <tbody>
+        <tr>
+          <td valign="top"><b>Operation</b><br>
+          </td>
+          <td valign="top"><b>Description</b><br>
+          </td>
+          <td valign="top"><b>Arguments</b><br>
+          </td>
+          <td valign="top"><b>Result</b><br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">- E<br>
+          </td>
+          <td valign="top">unary minus<br>
+          </td>
+          <td valign="top">number<br>
+          </td>
+          <td valign="top">number<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 + E2<br>
+          </td>
+          <td valign="top">addition<br>
+          </td>
+          <td valign="top">number x number<br>
+          </td>
+          <td valign="top">number<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 - E2<br>
+          </td>
+          <td valign="top">subtraction<br>
+          </td>
+          <td valign="top">number x number<br>
+          </td>
+          <td valign="top">number<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 * E2<br>
+          </td>
+          <td valign="top">multiplication<br>
+          </td>
+          <td valign="top">number x number<br>
+          </td>
+          <td valign="top">number<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 // E2<br>
+          </td>
+          <td valign="top">integer division<br>
+          </td>
+          <td valign="top">Integer x Integer<br>
+          </td>
+          <td valign="top">Integer<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 rem E2<br>
+          </td>
+          <td valign="top">integer reminder<br>
+          </td>
+          <td valign="top">Integer x Integer<br>
+          </td>
+          <td valign="top">Integer<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 / E2<br>
+          </td>
+          <td valign="top">real division<br>
+          </td>
+          <td valign="top">Real x Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1 rem E2<br>
+          </td>
+          <td valign="top">real remainder: E1 - E2*round(E1/E2)<br>
+          </td>
+          <td valign="top">Real x Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">E1^E2</td>
+          <td valign="top">power</td>
+          <td valign="top">number x positive Integer</td>
+          <td valign="top">number</td>
+        </tr>
+        <tr>
+          <td valign="top">min(E1,E2)</td>
+          <td valign="top">minimum</td>
+          <td valign="top">number x number</td>
+          <td valign="top">number</td>
+        </tr>
+        <tr>
+          <td valign="top">max(E1,E2)</td>
+          <td valign="top">maximum</td>
+          <td valign="top">number x number</td>
+          <td valign="top">number</td>
+        </tr>
+        <tr>
+          <td valign="top">sqrt(E)</td>
+          <td valign="top">square root</td>
+          <td valign="top">Real</td>
+          <td valign="top">Real</td>
+        </tr>
+        <tr>
+          <td valign="top">fma(E1,E2,E3)</td>
+          <td valign="top">fuse multiply and add: (E1*E2)+E3</td>
+          <td valign="top">Real x Real x Real</td>
+          <td valign="top">Real</td>
+        </tr>
+        <tr>
+          <td valign="top">exp(E)</td>
+          <td valign="top">exponentiation</td>
+          <td valign="top">Real</td>
+          <td valign="top">Real</td>
+        </tr>
+        <tr>
+          <td valign="top">ln(E)</td>
+          <td valign="top">natural logarithm</td>
+          <td valign="top">Real</td>
+          <td valign="top">Real</td>
+        </tr>
+        <tr>
+          <td valign="top">floor<br>
+          </td>
+          <td valign="top">round down to integral<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">ceiling<br>
+          </td>
+          <td valign="top">round up to integral<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">round<br>
+          </td>
+          <td valign="top">round to nearest integral<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">truncate<br>
+          </td>
+          <td valign="top">truncate to integral<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+          <td valign="top">Real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">int_from_real<br>
+          </td>
+          <td valign="top">Conversion from real to Integer<br>
+          </td>
+          <td valign="top">real<br>
+          </td>
+          <td valign="top">Integer<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">int_from_float<br>
+          </td>
+          <td valign="top">Conversion from float to Integer</td>
+          <td valign="top">float<br>
+          </td>
+          <td valign="top">Integer<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">int_from_double<br>
+          </td>
+          <td valign="top">Conversion from double to Integer</td>
+          <td valign="top">double<br>
+          </td>
+          <td valign="top">Integer</td>
+        </tr>
+        <tr>
+          <td valign="top">intN_from_int<br>
+          </td>
+          <td valign="top">Conversion from signed to int</td>
+          <td valign="top">positive int x int<br>
+          </td>
+          <td valign="top">int(N)<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">uintN_from_int<br>
+          </td>
+          <td valign="top">Conversion from unsigned to int</td>
+          <td valign="top">positive int x int<br>
+          </td>
+          <td valign="top">uint(N)<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">real_from_int<br>
+          </td>
+          <td valign="top">Conversion from int to real<br>
+          </td>
+          <td valign="top">int<br>
+          </td>
+          <td valign="top">real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">float_from_int<br>
+          </td>
+          <td valign="top">Conversion from int to float<br>
+          </td>
+          <td valign="top">int<br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">double_from_int<br>
+          </td>
+          <td valign="top">Conversion from int to double<br>
+          </td>
+          <td valign="top">int<br>
+          </td>
+          <td valign="top">double<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">real_from_float<br>
+          </td>
+          <td valign="top">Conversion from float to real<br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+          <td valign="top">real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">real_from_double<br>
+          </td>
+          <td valign="top">Conversion from double to real</td>
+          <td valign="top">double<br>
+          </td>
+          <td valign="top">real<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">double_from_float<br>
+          </td>
+          <td valign="top">Conversion from float to double<br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+          <td valign="top">double<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">float_from_double<br>
+          </td>
+          <td valign="top">Conversion from double to float</td>
+          <td valign="top">double<br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">floatFirst<br>
+          </td>
+          <td valign="top">First finite float number<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">floatLast<br>
+          </td>
+          <td valign="top">Last finite float number<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">doubleFirst<br>
+          </td>
+          <td valign="top">First finite double number</td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">double<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">doubleLast<br>
+          </td>
+          <td valign="top">Last finite double number</td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">double<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">minNormFloat<br>
+          </td>
+          <td valign="top">Minimal positive normalized float<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">minNormDouble<br>
+          </td>
+          <td valign="top">Minimal positive normalized double<br>
+          </td>
+          <td valign="top"><br>
+          </td>
+          <td valign="top">float<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    Argument types other than specified yield a type error. <br>
+    The integer division // rounds the result towards zero (truncates).
+    The relationship between // and rem is as follows:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; X #= (X rem Y) + (X // Y) * Y<br>
+    <br>
+  </body>
+</html>
+
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">#= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">#\= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">#< / 2</A>, <A HREF="../COLIBRI_DOC/index.html">#=< / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$\= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$< / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$=< / 2</A>
+</BODY></HTML>

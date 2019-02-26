@@ -1,0 +1,8 @@
+% SAT
+int_vars(int(32),[N]),real_vars(float,[X,Y,Res]),
+N #: 2 .. 21,
+X $< (1.6181^(N-2))/2.2360 + 1.0,
+Y $< (1.6181^(N-1))/2.2360 + 1.0,
+Res $= X + Y,
+% REFUTED GOAL
+neg(Res $< (1.6181^N)/2.2360 + 1.0).

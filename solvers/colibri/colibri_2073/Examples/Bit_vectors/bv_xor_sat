@@ -1,0 +1,13 @@
+% SAT
+%int_vars(uint(8),[X,Y,Z]),
+
+int_vars(bv(6),[X,Y,Z]),
+
+
+bv_var(X,"01?0??"),
+bv_var(Y, "0110?"),
+bv_var(Z,"?0?11"),
+
+xorb(X,Y) #= Z.
+%,
+%bv_label([X,Y,Z]).

@@ -1,0 +1,50 @@
+:- module(fzn_eplex).
+:- export maximize / 3.
+:- export minimize / 3.
+:- export satisfy / 1.
+:- export range_fzn_to_solver / 3.
+:- export set_solver_to_fzn / 2.
+:- export set_fzn_to_solver / 2.
+:- export float_solver_to_fzn / 2.
+:- export float_fzn_to_solver / 2.
+:- export bool_solver_to_fzn / 2.
+:- export bool_fzn_to_solver / 2.
+:- export bool2int / 2.
+:- export int2float / 2.
+:- export float_minus / 3.
+:- export float_plus / 3.
+:- export float_negate / 2.
+:- export int_minus / 3.
+:- export int_plus / 3.
+:- export int_negate / 2.
+:- export float_lin_ge / 3.
+:- export float_lin_le / 3.
+:- export float_lin_eq / 3.
+:- export int_lin_ge / 3.
+:- export int_lin_le / 3.
+:- export int_lin_eq / 3.
+:- export bool_ge / 2.
+:- export bool_le / 2.
+:- export bool_eq / 2.
+:- export float_ge / 2.
+:- export float_le / 2.
+:- export float_eq / 2.
+:- export int_ge / 2.
+:- export int_le / 2.
+:- export int_eq / 2.
+:- export float_declare_array / 3.
+:- export int_declare_array / 3.
+:- export float_declare_array / 1.
+:- export int_declare_array / 1.
+:- export bool_declare_array / 1.
+:- export float_declare / 3.
+:- export int_declare / 3.
+:- export float_declare / 1.
+:- export int_declare / 1.
+:- export bool_declare / 1.
+:- comment(summary, "Mapping from FlatZinc to lib(eplex)").
+:- comment(author, "Joachim Schimpf, supported by Cisco Systems and NICTA Victoria").
+:- comment(copyright, "Cisco Systems Inc, licensed under CMPL").
+:- comment(date, "$Date: 2008/02/17 18:04:21 $").
+:- comment(see_also, [library(flatzinc), library(eplex)]).
+:- comment(desc, html("\nThis module defines a mapping from FlatZinc operations to lib(eplex)\nand is intended to be used in conjunction with lib(flatzinc).\n</P><P>\nTODO:\tAdd a mapping for sets as array of booleans.\nAdd an appropriate globals.mzn.\n<P>\n")).

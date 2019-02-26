@@ -1,0 +1,7 @@
+% UNSAT
+real_vars(real, [A,B,Eps]),
+Eps $= real_from_int(1)/real_from_int(10^20),
+A $= real_from_int(1) + Eps,
+B $= real_from_int(1) - Eps,
+% REFUTED GOAL
+neg(A $\= B).

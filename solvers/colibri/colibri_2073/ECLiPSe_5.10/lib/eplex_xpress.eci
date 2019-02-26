@@ -1,0 +1,6 @@
+:- module(eplex_xpress).
+:- export initialization(import eplex).
+:- comment(summary, "Load lib(eplex) with the XPRESS-MP solver").
+:- comment(author, "Joachim Schimpf, IC-Parc").
+:- comment(copyright, "Cisco Systems, Inc.").
+:- comment(date, "$Date: 2006/09/23 01:53:30 $").

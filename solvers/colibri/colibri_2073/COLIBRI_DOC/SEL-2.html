@@ -1,0 +1,30 @@
+<HTML><HEAD><TITLE>X $=< Y</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>X $=< Y</H1>
+X is less or equal to Y.
+<DL>
+<DT><EM>X</EM></DT>
+<DD>A Real term.
+</DD>
+<DT><EM>Y</EM></DT>
+<DD>A Real term.
+</DD>
+</DL>
+<H2>Description</H2>
+This constraints exists also in a reified form, (X $=&lt; Y) #= Bool, where Bool is an int variable ranging in 0..1.
+<H3>Fail Conditions</H3>
+Fails if the domains of the two terms cannot satisfy the inequality.
+<H3>Resatisfiable</H3>
+no
+<H2>Examples</H2>
+<PRE>
+Success:
+    real_vars(float,[X,Y]), X $: 2.0 .. 10.0, Y $: 1.0 .. 9.0, X $=&lt; Y.
+    (gives X = _436{[2.0 .. 9.0]}, Y = _436{[2.0 .. 9.0]})
+
+Fail:
+    real_vars(real,[X,Y]), X $: 1.0 .. 10.0, Y #: 15.0 .. 20.0, Y $=&lt; X.
+</PRE>
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">$< / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$\= / 2</A>
+</BODY></HTML>

@@ -1,0 +1,6 @@
+% UNSAT
+real_vars(double,[A,B,C,D]),
+A $>= 0.0,
+B $>= 0.0,
+% REFUTED GOAL
+neg(((C * C) * A + (D * D) * B) $>= 0.0).

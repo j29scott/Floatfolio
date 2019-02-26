@@ -1,0 +1,29 @@
+<HTML><HEAD><TITLE>real_vars(+Type,Vars)</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>real_vars(+Type,Vars)</H1>
+Typing constraints for "real" vars.
+<DL>
+<DT><EM>+Type</EM></DT>
+<DD>Real type among real, float (32 bits) and double (64 bits).
+</DD>
+<DT><EM>Vars</EM></DT>
+<DD>A variable or a list of variables.
+</DD>
+</DL>
+<H2>Description</H2>
+Variables in Vars are constrained to have the type Type.
+<H3>Fail Conditions</H3>
+Fails if Vars cannot have the defined type.
+<H3>Resatisfiable</H3>
+no
+<H2>Examples</H2>
+<PRE>
+Succes:
+  real_vars(double,X).  (gives  X = _868{[-1.0Inf .. 1.0Inf]})
+
+Fail:
+  real_vars(double,X),int_vars(float,X).
+</PRE>
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">$= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">$: / 2</A>
+</BODY></HTML>

@@ -1,0 +1,22 @@
+%UNSAT
+no_delta,
+no_3B,
+real_vars(float,[F,F2,F3,F4,F5,F6,F7,F8,F9,SinF,CosF,TanF,Sin,Cos,Tan]),
+%F $: -0.5 .. 0.5, % around 45s
+F $: -0.1 .. 0.1, % around 5s
+F2 $= F*F,
+F3 $= F2*F,
+F4 $= F3*F,
+F5 $= F4*F,
+F6 $= F5*F,
+F7 $= F6*F,
+F8 $= F7*F,
+F9 $= F8*F,
+SinF $= F - F3/6.0 + F5/120.0 - F7/5040.0,
+CosF $= 1.0 - F2/2.0 + F4/24.0 - F6/720.0 + F8/40320.0,
+TanF $= F + F3 / 3.0 + 2.0*F5 / 15.0 + 17.0*F7 / 315.0 + 62.0*F9 / 2835.0,
+abs(Sin - SinF) $< 0.000003,
+abs(Cos - CosF) $< 0.000003,
+abs(Tan - TanF) $< 0.0001,
+% REFUTED GOAL
+neg(abs(Tan - Sin / Cos) $< 0.001).

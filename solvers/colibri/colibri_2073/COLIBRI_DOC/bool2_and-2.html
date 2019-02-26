@@ -1,0 +1,33 @@
+<HTML><HEAD><TITLE>X and Y</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>X and Y</H1>
+X is true and Y is true.
+<DL>
+<DT><EM>X</EM></DT>
+<DD>A "boolean" integer term (range 0..1).
+</DD>
+<DT><EM>Y</EM></DT>
+<DD>A "boolean" integer term (range 0..1).
+</DD>
+</DL>
+<H2>Description</H2>
+This constraints exists also in a reified form, (X and Y) #= Bool, where Bool is an int variable ranging in 0..1.
+<H3>Fail Conditions</H3>
+Fails if the domains of the two terms cannot satisfy the logical operator.
+<H3>Resatisfiable</H3>
+no
+<H2>Examples</H2>
+<PRE>
+Success:
+    int_vars(int,[X,Y]), X and Y.
+    (gives X = 1, Y = 1)
+
+    int_vars(int,[X,Y,B]), X and Y #= B, X #\= B.
+    (gives X = 1, Y = 0, B = 0)
+
+Fail:
+    int_vars(int,[X,Y,B]), X and Y #= B, X #= Y, X #\= B.
+</PRE>
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">neg / 1</A>, <A HREF="../COLIBRI_DOC/index.html">or / 2</A>, <A HREF="../COLIBRI_DOC/index.html">xor / 2</A>, <A HREF="../COLIBRI_DOC/index.html">=> / 2</A>, <A HREF="../COLIBRI_DOC/index.html">ite / 3</A>
+</BODY></HTML>

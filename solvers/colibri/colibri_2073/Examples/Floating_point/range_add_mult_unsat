@@ -1,0 +1,9 @@
+% UNSAT
+real_vars(float,[X,Y,Z,Res]),
+X $>= 0.0, X $=< 180.0,
+Y $>= -180.0, Y $=< 0.0,
+Z $>= 0.0, Z $=< 1.0, 
+X+Y $>= 0.0,
+Res $= X + (Y*Z),
+% REFUTED GOAL
+neg((Res $>= 0.0) and (Res $=< 360.0)).

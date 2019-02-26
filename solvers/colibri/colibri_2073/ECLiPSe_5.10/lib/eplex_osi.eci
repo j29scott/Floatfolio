@@ -1,0 +1,4 @@
+:- module(eplex_osi).
+:- export initialization(import eplex).
+:- comment(summary, "Load lib(eplex) with COIN-OR's OSI with a default solver").
+:- comment(date, "$Date: 2006/09/23 01:53:26 $").

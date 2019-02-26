@@ -1,0 +1,6 @@
+% UNSAT
+real_vars(double,[X,Y,Res]),
+[X,Y] $: 1.0 .. 2.0,
+ite(X - Y $\= 0, Res $= 1/(X-Y), Res $= 0),
+% REFUTED GOAL
+neg(abs(Res) $< 2^53). 

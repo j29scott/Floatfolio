@@ -1,0 +1,6 @@
+% UNSAT (too long for 32 bits)
+int_vars(uint(16),[X,Y,Z,Res]),
+X #=< Y, Y #< Z, 
+Res #= (X * Y) // Z,
+% REFUTED GOAL
+neg(Res #=< X).

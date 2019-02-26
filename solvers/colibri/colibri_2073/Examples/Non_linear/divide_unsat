@@ -1,0 +1,7 @@
+% UNSAT
+int_vars(int(32),[X,Y,Res]),
+X #>= 1, Y #>= 1,
+X #>= Y, 
+Res #= X // Y,
+% REFUTED GOAL
+neg(((Res * Y) // Res) #= Y).

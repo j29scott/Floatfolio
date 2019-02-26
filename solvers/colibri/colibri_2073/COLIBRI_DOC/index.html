@@ -1,0 +1,250 @@
+<HTML><HEAD><TITLE>library(COLIBRI_DOC)</TITLE></HEAD><BODY>
+[  ]<H1>library(COLIBRI_DOC)</H1>
+Simple COLIBRI interface
+<H2>Predicates</H2>
+<BLOCKQUOTE>
+<DL>
+<DT><A HREF="-Arithmetic-operators-0.html"><STRONG> Arithmetic operators</STRONG></A></DT>
+<DD>Operators allowed in numerical expressions.</DD>
+<DT><A HREF="-dThreB1_use-0.html"><STRONG>use_3B</STRONG></A></DT>
+<DD>Enable 3B filtering.</DD>
+<DT><A HREF="-dThreB2_no-0.html"><STRONG>no_3B</STRONG></A></DT>
+<DD>Disable 3B filtering.</DD>
+<DT><A HREF="-delta1_use-0.html"><STRONG>use_delta</STRONG></A></DT>
+<DD>Enable difference logics and simplex.</DD>
+<DT><A HREF="-delta2_no-0.html"><STRONG>no_delta</STRONG></A></DT>
+<DD>Disable difference logics and simplex.</DD>
+<DT><A HREF="-solve1_cstrs-0.html"><STRONG>solve_cstrs</STRONG></A></DT>
+<DD>Asks to solve current constraints.</DD>
+<DT><A HREF="-solve2_no-0.html"><STRONG>no_solve</STRONG></A></DT>
+<DD>Disable constraints solving.</DD>
+<DT><A HREF="-solve3_timeout-0.html"><STRONG>set_timeout(T)</STRONG></A></DT>
+<DD>Define time limit.</DD>
+<DT><A HREF="-threshold1_set-1.html"><STRONG>set_threshold(T)</STRONG></A></DT>
+<DD>Change reduction threshold.</DD>
+<DT><A HREF="-threshold2_get-1.html"><STRONG>get_threshold(T)</STRONG></A></DT>
+<DD>Return current reduction threshold.</DD>
+<DT><A HREF="H-int_vars-2.html"><STRONG>int_vars(Type,Vars)</STRONG></A></DT>
+<DD>Typing constraints for "integer" variables Vars.</DD>
+<DT><A HREF="H-set_default_int_bounds-2.html"><STRONG>set_default_int_bounds(Low,High)</STRONG></A></DT>
+<DD>Default range for int variables</DD>
+<DT><A HREF="HN-2.html"><STRONG>Vars #: Range</STRONG></A></DT>
+<DD>Range definition for "integer" types: int, int(N) and uint(N) (where N is the size in bits).</DD>
+<DT><A HREF="HL-2.html"><STRONG>X #< Y</STRONG></A></DT>
+<DD>X is strictly less than Y.</DD>
+<DT><A HREF="HE-2.html"><STRONG>X #= Y</STRONG></A></DT>
+<DD>X is equal to Y.</DD>
+<DT><A HREF="HEL-2.html"><STRONG>X #=< Y</STRONG></A></DT>
+<DD>X is less or equal to Y.</DD>
+<DT><A HREF="HG-2.html"><STRONG>X #> Y</STRONG></A></DT>
+<DD>X is strictly greater than Y.</DD>
+<DT><A HREF="HGE-2.html"><STRONG>X #>= Y</STRONG></A></DT>
+<DD>X is greater or equal to Y.</DD>
+<DT><A HREF="HRE-2.html"><STRONG>X #\= Y</STRONG></A></DT>
+<DD>X is not equal to Y.</DD>
+<DT><A HREF="S-real_vars-2.html"><STRONG>real_vars(+Type,Vars)</STRONG></A></DT>
+<DD>Typing constraints for "real" vars.</DD>
+<DT><A HREF="SN-2.html"><STRONG>Vars $: +Range</STRONG></A></DT>
+<DD>Range definition for "real" types: real, float and double.</DD>
+<DT><A HREF="SL-2.html"><STRONG>X $< Y</STRONG></A></DT>
+<DD>X is stricly less than Y.</DD>
+<DT><A HREF="SE-2.html"><STRONG>X $= Y</STRONG></A></DT>
+<DD>X is equal to Y.</DD>
+<DT><A HREF="SEL-2.html"><STRONG>X $=< Y</STRONG></A></DT>
+<DD>X is less or equal to Y.</DD>
+<DT><A HREF="SG-2.html"><STRONG>X $> Y</STRONG></A></DT>
+<DD>X is strictly greater than Y.</DD>
+<DT><A HREF="SGE-2.html"><STRONG>X $>= Y</STRONG></A></DT>
+<DD>X is greater or equal to Y.</DD>
+<DT><A HREF="SRE-2.html"><STRONG>X $\= Y</STRONG></A></DT>
+<DD>X is not equal to Y.</DD>
+<DT><A HREF="SisFinite-1.html"><STRONG>isFinite(X)</STRONG></A></DT>
+<DD>Restriction to finite values.</DD>
+<DT><A HREF="SisFinite_no-1.html"><STRONG>isInfinite(X)</STRONG></A></DT>
+<DD>Restriction to infinite values.</DD>
+<DT><A HREF="SisNormal-1.html"><STRONG>isNormal(X)</STRONG></A></DT>
+<DD>Restriction to normal values.</DD>
+<DT><A HREF="SisNormal_no-1.html"><STRONG>isSubnormal(X)</STRONG></A></DT>
+<DD>Restriction to subnormal values.</DD>
+<DT><A HREF="SisPositive-1.html"><STRONG>isPositive(X)</STRONG></A></DT>
+<DD>Restriction to positive floating point values.</DD>
+<DT><A HREF="SisPositive_no-1.html"><STRONG>isNegative(X)</STRONG></A></DT>
+<DD>Restriction to negative floating point values.</DD>
+<DT><A HREF="bool1_neg-1.html"><STRONG>neg(X)</STRONG></A></DT>
+<DD>The negation of X is true.</DD>
+<DT><A HREF="bool2_and-2.html"><STRONG>X and Y</STRONG></A></DT>
+<DD>X is true and Y is true.</DD>
+<DT><A HREF="bool3_or-2.html"><STRONG>X or Y</STRONG></A></DT>
+<DD>X is true or Y is true.</DD>
+<DT><A HREF="bool4_xor-2.html"><STRONG>X xor Y</STRONG></A></DT>
+<DD>Eclusive or of X and Y.</DD>
+<DT><A HREF="bool5_EG-2.html"><STRONG>X => Y</STRONG></A></DT>
+<DD>X implies Y.</DD>
+<DT><A HREF="bool6_ite-3.html"><STRONG>ite(Cond,Then,Else)</STRONG></A></DT>
+<DD>if Cond then Then else Else.</DD>
+</DL>
+</BLOCKQUOTE>
+<H2>Description</H2>
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <title></title>
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <big><b>A simple solver using COLIBRI</b></big><b><br>
+    </b><br>
+    <b>Usage</b><br>
+    &nbsp; colibri.(sh|bat) File<br>
+    or<br>
+    &nbsp; colibri.(sh|bat)<br>
+    <br>
+    The <i>sh</i> and <i>bat</i> extentions corresponds to linux and
+    windows environments. In the first form the script colibri reads
+    query from file <i>File</i>. In the second form the input is
+    searched in a file <i>colibri.in</i> in the directory from where the script is called. Results are sent to stdout.<br>
+    <br>
+    Constraint solving techniques are widely recognized as a powerful
+    tool for Validation and Verification activities such as test data
+    generation or counter-example generation from a formal model,
+    program source code or binary code. A constraint solver maintains a
+    list of posted constraints (constraint store) over a set of
+    variables and a set of allowed values (domain) for each variable,
+    and provides facilities for constraint propagation (filtering) and
+    for instantiation of variables (labeling) in order to find a
+    solution.<br>
+    <br>
+    We present here a simple interface to the COLIBRI library
+    (COnstraint LIBrary for veRIfication) developed at CEA List and used
+    inside the GATeL tool for model based testing and verification from
+    Lustre/SCADE. The variety of types and constraints provided by
+    COLIBRI makes it possible to use it in other validation tools at CEA
+    LIST like PathCrawle for test data generation purposes and Osmose
+    for structural testing from binary code.<br>
+    <br>
+    COLIBRI provides basic constraints for arithmetic operations and
+    comparisons of various numeric types (integers, reals and floats).
+    Cast constraints are available for cast operations between these
+    types. COLIBRI also provides basic procedures allowing to
+    instantiate variables in their domains making it possible to design
+    specific labelling procedures. Thus the three aforementioned testing
+    tools have designed their own labelling procedures on the basis of
+    COLIBRI primitives.<br>
+    <br>
+    The domains of numerical variables are represented by unions of
+    disjoint intervals (no NaNs for floats): integer bounds for
+    integers, double float bounds for reals, and double/simple float
+    bounds for double/simple floating point formats. These unions of
+    intervals make it possible to accurately handle domain differences.
+    For each numeric type and each basic unary/binary operation or
+    comparison, COLIBRI provides the corresponding constraint.<br>
+    <br>
+    Moreover, for each arithmetic operation, additional filtering rules
+    apply algebraic simplifications, which are very similar for integer
+    and real arithmetics, whereas floating arithmetics uses specific
+    rules. Here are a few examples of basic algebraic simplifications.<br>
+    <ul>
+      <li>Factorization of constraints. If the constraint store contains
+        A+B=C and a new constraint A+B=X is added (or derived) in the
+        store, then only one of these two constraints remains in the
+        store and the variables C and X&nbsp; are&nbsp; unified, that
+        is, they are identified and their domain is set to the
+        intersection of the domains of C and X.</li>
+      <li>Special values (neutral elements, absorbing elements).The
+        constraint A+0=X leads to the unification of A and X.</li>
+      <li>Identities between arguments. The constraint A+A=C is
+        transformed into 2*A=C which is more precisely handled by
+        interval arithmetics. The constraint A+X=A in integer and real
+        arithmetics leads to the unification of A and B&nbsp; (which is
+        not valid in floating point arithmetics).<br>
+      </li>
+    </ul>
+    <br>
+    <b>Bounded and modular integer arithmetics</b><br>
+    <br>
+    COLIBRI provides two kinds of arithmetics for integers: bounded
+    arithmetics for ideal finite integers and modular arithmetics for
+    signed/unsigned computer integers. Bounded arithmetics is
+    implemented with classical filtering rules for integer interval
+    arithmetics. These rules are managed in the projection functions of
+    each arithmetic constraint. Moreover, a congruence domain is
+    associated to each integer variable. Filtering rules handle these
+    congruences in order to compute new ones and maintain the
+    consistency of interval bounds with congruences. The congruences are
+    introduced by multiplications by a constant and propagated in the
+    projection functions of each arithmetic constraint.<br>
+    <br>
+    Modular arithmetics constraints are implemented by a combination of
+    bounded arithmetics constraints with modulus constraints. Thus they
+    benefit from the mechanisms provided for bounded integer
+    arithmetics. Notice that using the unions of disjoint intervals for
+    the domain representation makes it possible to precisely represent
+    the domain of signed/unsigned integers. For example, consider the
+    constraint A + B = C over 3-bit unsigned integers where A in 2..4, B
+    in 4..7 and C in 0..7. This constraint is handled by the constraints
+    corresponding to the bounded arithmetic expression C = A + B - K * 8<br>
+    where K in 0..1 represents the overflow status.<br>
+    The filtering of these constraints converges to the interval C in
+    [0..3, 6..7] where the sub-interval 0..3 of C is reached when there
+    is an overflow (i.e. K = 1).<br>
+    The domain representation by compact intervals in this case would be
+    less precise and result in a complete interval C in [0..7] without
+    any reduction.<br>
+    <br>
+    <b>Real and floating point arithmetics</b><br>
+    <br>
+    Real arithmetics is implemented with classical filtering rules for
+    real interval arithmetics where interval bounds are double floats.
+    In real interval arithmetics each projection function is computed
+    using different rounding modes for the lower and the upper bounds of
+    the resulting intervals. The lower bound is computed by rounding
+    downward, towards&nbsp; -1.0Inf, while the upper bound is computed
+    by rounding upward, towards +1.0Inf. This enlarging ensures that the
+    resulting interval is the smallest interval of doubles including all
+    real solutions.<br>
+    <br>
+    Floating point arithmetics is implemented with a specific interval.
+    Notice that properties like associativity or distributivity do not
+    hold in floating point calculus. <br>
+    The projection functions in this arithmetics have to take into
+    account absorption and cancellation phenomena specific to floating
+    point computations. These phenomena are handled by specific
+    filtering rules allowing to further reduce&nbsp; the domains of
+    floating point variables. For example, the constraint A+X=A over
+    floating point numbers means that X is absorbed by A. <br>
+    The minimal absolute value in the domain of X can be used to
+    eliminate all the values in the domain of A that do not absorb this
+    minimum. Thus, in double precision with the default rounding mode
+    (called nearest to even), for<br>
+    X = 1.0 the domain of A is strongly reduced to the union of two
+    intervals of values that can absorb X:<br>
+    [MinDouble .. -9007199254740996.0,&nbsp; 9007199254740992.0 ..
+    MaxDouble].<br>
+    <br>
+    COLIBRI uses very general and powerful filtering rules for addition
+    and subtraction operations. For example, for the constraint A+B=1.0
+    in double precision with the nearest to even rounding mode, such
+    filtering rules converge to the same interval for A and B <br>
+    [-9007199254740991.0 .. 9007199254740992.0].<br>
+    <br>
+    <b>Implementation details</b><br>
+    <br>
+    COLIBRI is implemented in ECLiPSe Prolog. Its suspensions, generic
+    unification and meta-term mechanisms make it possible to easily
+    design new abstract domains and associated constraints. Incremental
+    constraint posting with on-the-fly filtering and automatic
+    backtracking to a previous constraint state provided by COLIBRI are
+    important benefits for search-based state exploration tools, and in
+    particular, for test generation tools.<br>
+    <br>
+  </body>
+</html>
+
+<H2>About</H2><UL COMPACT>
+<LI><STRONG>Status: </STRONG>evolving
+<LI><STRONG>Copyright &copy; </STRONG>CEA List
+<LI><STRONG>Date: </STRONG>February 2016
+</UL>
+<HR>Generated from COLIBRI_DOC.eci on Wed Mar 23 17:46:17 2016
+</BODY></HTML>

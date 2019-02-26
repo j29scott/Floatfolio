@@ -1,0 +1,11 @@
+% SAT
+%int_vars(uint(8),[X,Y,Z,T]),
+
+int_vars(bv(8),[X,Y,Z,T]),
+
+X #= 3 << 2, % X = 12
+Y #= 19 >> 2, % Y = 4
+24 #= Z << 2, % Z = 6
+15 #= T >> 3, % T = 127,
+
+bv_label([X,Y,Z,T]).

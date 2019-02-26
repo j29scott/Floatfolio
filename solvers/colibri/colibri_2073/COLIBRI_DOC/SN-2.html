@@ -1,0 +1,29 @@
+<HTML><HEAD><TITLE>Vars $: +Range</TITLE>
+</HEAD><BODY>[ <A HREF="index.html">library(COLIBRI_DOC)</A> |  ]
+<H1>Vars $: +Range</H1>
+Range definition for "real" types: real, float and double.
+<DL>
+<DT><EM>Vars</EM></DT>
+<DD>A variable or a list of variables.
+</DD>
+<DT><EM>+Range</EM></DT>
+<DD>real/float/double value, real/float/double interval or a list of real/float/double values and real/float/double intervals.
+</DD>
+</DL>
+<H2>Description</H2>
+Variables in Vars have the range Range.
+<H3>Fail Conditions</H3>
+Fails if at least one variable of Vars cannot have the range Range.
+<H3>Resatisfiable</H3>
+no
+<H2>Examples</H2>
+<PRE>
+Success:
+   real_vars(double,X), X $: 1.0..10.0. (gives X = _337{[1.0 .. 10.0]})
+
+Fail:
+   real_vars(double,X), X $: 1.0..10.0, X $: -10.0 .. -1.0.
+</PRE>
+<H2>See Also</H2>
+<A HREF="../COLIBRI_DOC/index.html">$= / 2</A>, <A HREF="../COLIBRI_DOC/index.html">real_vars / 2</A>
+</BODY></HTML>

@@ -1,0 +1,12 @@
+% UNSAT
+int_vars(uint(16),[X]),
+real_vars(float,[S_Max,S_MSB,S_Scale,Y,Res0,Res1,Res]),
+S_Max $= 10.0,
+S_MSB $= S_Max * 2.0,
+S_Scale $= 2.0^16 / S_MSB,
+Y $: 0.25 .. 1.0,
+Res0 $= float_from_int(X) / S_Scale,
+ite(Res0 $>= S_Max, Res1 $= Res0 - S_MSB, Res1 $= Res0),
+Res $= Res1 / Y,
+% REFUTED GOAL
+neg((Res $> -1.0Inf) and (Res $< 1.0Inf)).

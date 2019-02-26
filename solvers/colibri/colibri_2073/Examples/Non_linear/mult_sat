@@ -1,0 +1,7 @@
+% SAT
+int_vars(int(32),[X,Y,Res]),
+X #: -10 .. -1,
+Y #: 1 .. 10,
+Res #= X*Y + 1,
+% REFUTED GOAL
+neg((Res #>= -99) and (Res #=< -Y)).

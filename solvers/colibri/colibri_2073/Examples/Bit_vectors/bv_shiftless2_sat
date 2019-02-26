@@ -1,0 +1,29 @@
+% SAT
+
+%int_vars(uint(2),[X,Y,Z,R,U,V]),
+
+int_vars(bv(2),[X,Y,Z,R,U,V]),
+
+
+/*
+Si on change la taille ici à 120, ça rame.
+Alors que c'est typiquement un truc que le labeling bv finit vite
+Pour tester, enlever bv_label
+*/
+
+
+Y /\ R #= xorb(Z, U),
+R #= V /\ Y, 
+U /\ R #= Z,
+bv_label([X,Y,Z,R,U,V]).
+
+
+
+
+
+
+
+
+
+%V << 3 #= xorb(Z >> 3, \ X),
+%Y  #= \ X \/ U,

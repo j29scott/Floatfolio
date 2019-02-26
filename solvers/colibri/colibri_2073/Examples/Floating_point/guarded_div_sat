@@ -1,0 +1,10 @@
+% SAT
+real_vars(float,[X,Y,Threshold,Res]),
+Threshold $= 1000.0,
+X $>= 0.0,
+Y $> 0.1,
+Y $< 1.0,
+X / Threshold $=< Y,
+Res $= X / Y,
+% REFUTED GOAL
+neg(Res $=< Threshold).

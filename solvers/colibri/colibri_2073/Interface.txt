@@ -1,0 +1,101 @@
+SIMPLE COLIBRI INTERFACE
+
+Usage
+  colibri.(sh|bat) File
+or
+  colibri.(sh|bat)
+
+The "sh" and "bat" terminations corresponds to linux and windows environments.
+In the first form the script colibri reads query from file File.
+In the second form the input is searched in a file colibri.in in
+the directory from where the script is called.
+Results are sent to stdout.
+
+Possible answers are:
+- UNSAT: (return code 0) no solution
+- SAT: (return code 1) there exists a model, the binding of problem 
+  variables is printed just after (VAR = VALUE)
+- ERROR:reason (return code 2) where reason is an exception name
+- UNKNOWN:no_solve (return code 3) when it remains constraints
+  while no_solve directive is used
+- UNKNOWN:timeout (return code 3) when maximum time allocated was reached.
+
+The content of colibri.in is a comma separated list of
+goals terminated by "."
+Possible goals are the following:
+
+Typing goals:
+- int_vars(IType,[V1,...Vn]) with IType in int, int(N), uint(N)
+   where N is the size in bits for signed/unsigned int
+- real_vars(RType,[V1,...Vn]) with RType in real, float, double
+Variable names must begin with a capital letter
+
+Range definitions:
+- V #: L..H (interval) or [B0..B1, B2, B3..B4,...] (union of intervals)
+   with integer bounds
+- V $: L..H (interval) or [B0..B1, B2, B3..B4,...] (union of intervals)
+   with float ou double bounds (for real and double types)
+   including -1.0Inf and 1.0Inf
+
+"Integer" operators with boolean codomain ([0,1])
+- (Expr1 op Expr2) #= 0/1 or Expr1 op Expr2 (implicitly equal to 1): where
+  op belongs to : #=, #\=, #<, #=<, #>, #>=, neg, and, or, xor, =>, ite
+
+Other "Integer" operators:
+ +, -, unary -, *, //, rem, ^ (integer power), min, max, abs
+Cast: 
+ int_from_real, int_from_float, int_from_double,
+ intN_from_int(N,I), uintN_from_int(N,I) signed/unsigned of size N
+
+"Real" operators with boolean codomain ([0,1])
+- (Expr1 op Expr2) #= 0/1 or Expr1 op Expr2 (implicitly equal to 1): where
+  op belongs to: $=, $\=, $<, $=<, $>, $>=,
+  isFinite, isInfinite, isNormal, isSubnormal
+
+Other real operators:
+ +, -, unary -, *, /, rem (real reminder), fma (fuse mult add),
+ ^ (integer power), sqrt, min, max, abs, ln, exp,
+ round, truncate, floor, ceiling
+Cast:
+ real_from_int, float_from_int, double_from_int,
+ real_from_float, real_from_double, double_from_float, float_from_double
+Constants:
+- floatFirst, floatLast: first and last finite floats
+- doubleFirst, doubleLast: first and last finite doubles
+- minNormFloat, minNormDouble: minimal positive normalized float/double
+
+Directives:
+- use_3B, no_3B, set_threshold(T) where 0.0 < T < 1.0 (default 1e-3)
+- use_delta, no_delta: enable or disable DBM
+- no_solve: no constraints solving, domain propagation only
+  return code 2 (UNKNOWN:no_solve)
+- set_timeout(T) : defines maximum time (in seconds) allocated
+  for constraints resolution, return code 3 (UNKNOWN:timeout)
+
+Float/double operations are rounded to nearest even
+Real/float/double constants are rounded to nearest even
+
+-------------------------------------------------------------------------
+Example of input file "colibri.in"
+
+no_delta,
+no_3B,
+real_vars(float,[F,F2,F3,F4,F5,F6,F7,F8,F9,SinF,CosF,TanF,Sin,Cos,Tan]),
+F $: -0.5 .. 0.5,
+F2 $= F*F,
+F3 $= F2*F,
+F4 $= F3*F,
+F5 $= F4*F,
+F6 $= F5*F,
+F7 $= F6*F,
+F8 $= F7*F,
+F9 $= F8*F,
+SinF $= F - F3/6.0 - F5/120.0 + F7/5040.0,
+CosF $= 1.0 - F2/2.0 + F4/24.0 - F6/720.0 + F8/40320.0,
+TanF $= F + F3 / 3.0 + 2.0*F5 / 15.0 + 17.0*F7 / 315.0 + 62.0*F9 / 2835.0,
+abs(Sin - SinF) $< 0.000003,
+abs(Cos - CosF) $< 0.000003,
+abs(Tan - TanF) $< 0.0001,
+abs(Tan - Sin / Cos) $>= 0.001.
+
+

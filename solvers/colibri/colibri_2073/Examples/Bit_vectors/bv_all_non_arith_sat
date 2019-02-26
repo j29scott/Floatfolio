@@ -1,0 +1,59 @@
+% SAT
+
+%int_vars(uint(10),[X,Y,Z,R,S,T,V]),
+int_vars(bv(10),[X,Y,Z,R,S,T,V]),
+
+
+% à chaque known bit enlevé, ça ralenti pas mal. mais ça reste raisonnable
+% UNE SEULE solution possible
+
+bv_var(X,"0????1?"),
+bv_var(Y,"0????0?"),
+bv_var(Z,"0??????"),
+bv_var(R,"0??????"),
+bv_var(S,"0??????"),
+bv_var(T,"0??????"),
+bv_var(V,"0?????1"),
+
+
+
+V \/ 20	#= \ (xorb(X, Y)) /\ S,				%...a
+Y >> V 		#=  R,					%...b
+ xorb(X, R) 	#=  S,					%...c
+ (Z << 3) /\ S	#=  (xorb(X, T) << 3) /\ S,		%...d
+S 		#= xorb(T, R << 1)  \/ (Y >> 3),	%...e
+S >> 1		#= (\ (Z /\ T)) /\ S \/ (V << 2),	%...f
+
+% Par contre, enlever le labeling BV plombe le truc
+bv_label([X,Y,Z,R,S,T,V]).
+
+/*
+X: 110011   
+Y: 011001
+Z: 100111
+T: 100100
+V: 000001
+R: 001100
+S: 111111
+*/
+
+/*
+	    
+12=[1, 1, 0, 0]   R
+63=[1, 1, 1, 1, 1, 1]  S
+51= [1, 1, 0, 0,1,1]     X                                               
+25=[1, 1, 0, 0, 1]   Y                                           
+39=[1, 0, 0, 1, 1, 1]    Z                                                      
+36=[1, 0, 0, 1, 0, 0]   T
+	    
+*/
+
+/*
+V = 1,
+R = 12,
+S = 63,
+X = 51,
+Y = 25,
+Z = 39,
+T = 36,
+*/
