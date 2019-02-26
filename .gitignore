@@ -3,3 +3,4 @@ solvers/mathsat/mathsat*
 solvers/cvc4/cvc4*
 solvers/z3/z3*
 solvers/xsat/xsat*
+venv
