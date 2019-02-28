@@ -13,6 +13,7 @@ from src.portfolio.svm_classify import SVM_Classify
 from src.portfolio.svm_regression import SVM_Regression
 from src.portfolio.linear_regression import Linear_Regression
 from src.portfolio.logistic_regression import Logistic_Regression
+from src.portfolio.oracle import Oracle
 settings.timeout = 60
 dir = sys.argv[1]
 files = glob.glob(dir+"*")
@@ -28,7 +29,7 @@ for f in files:
         break
     
 
-split = 0.5
+split = 0.1
 train_inputs = inputs[:round(split * len(inputs)) ]
 test_inputs  = inputs[round(split*len(inputs))+1:]
 
@@ -42,7 +43,7 @@ for solver in solvers:
         plot_data[-1][0].append(test_inputs[i].times[solver])
 
 
-algorithms = [Rand,SVM_Classify,SVM_Regression,Linear_Regression,Logistic_Regression]
+algorithms = [Rand,SVM_Classify,SVM_Regression,Linear_Regression,Logistic_Regression,Oracle]
 for alg in algorithms:
     classifier = alg()
     classifier.train(train_inputs)
