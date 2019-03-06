@@ -14,28 +14,24 @@ from sklearn.neural_network import MLPClassifier
 
 #doc1 = ["This is a sentence", "This is another sentence"]
 log = open("log.txt","w")
-alph = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n']
+alph = {'a':[0,1,2],'b':[0,2,1],'c':[1,0,2],'d':[1,2,0],'e':[2,0,1],'f':[2,1,0]}
 data = []
 labels = []
 N = 10000
 tot_zero=0
 for i in range(N):
-    v = []
-    for i in range(10):
-        v.append(random.randint(0,10))
-    l = 0
-    r = 0
-    for i in range(0,10,2):
-        l += v[i]
-        r += v[i+1]
-    s = ""
-    for i in range(10):
-        s += str(v[i]) + ' '
+    s = ''
+    al = list(alph.keys())
+    scores = [0,0,0]
+    for i in range(random.randint(2,50)):
+        a = random.choice(al)
+        s += a + ' '
+        scores[0] += alph[a][0]
+        scores[1] += alph[a][1]
+        scores[2] += alph[a][2]
     data.append(s)
-    if l < r:
-        labels.append(1.0)
-    else:
-        labels.append(0.0)
+    labels.append(scores.index(max(scores)))
+    pdb.set_trace()    
 
 
 
@@ -72,12 +68,12 @@ for epoch in range(max_epochs):
         #model = svm_train(labels[:nt],features[:nt], "-s 0 -t 2 ")
         #predictions,[acc,mse,cor], oth = svm_predict(labels[nt+1:],features[nt+1:],model)
         #print("SVM Accuracy = ", acc)
-        clf = MLPClassifier(solver='lbfgs', alpha=1e-4, hidden_layer_sizes=(5, 5), random_state=1)
+        clf = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 8), random_state=1)
         clf.fit(features[:nt],labels[:nt])
         predict = clf.predict(features[nt+1:])
         cor = 0
         tot = 0
-        
+        pdb.set_trace()
         for i in range(nt+1,len(labels)):
             if predict[i - nt -1] == labels[i]:
                 cor += 1

@@ -1,8 +1,17 @@
 import json
 from src.settings import *
+
+def documentize(lines):
+    ret = ""
+    for line in lines:
+        if line.find(";") != -1:
+            continue 
+        line = line.replace('(', ' ( ')
+        line = line.replace(')',' ) ')
 class Input:
     def __init__(self,as_str):
         self.features = []
+        self.doc = documentize(as_str)
         for i in range(len(QF_FP_FUNCS)):
             self.features.append(0.0)
         for line in as_str:
