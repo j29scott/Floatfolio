@@ -14,7 +14,10 @@ rng="$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM"
 python3 BanditFuzz/bin/randomized_gen.py > db/inputs/$rng.smt2
 for solver in $( ls  solvers/); do
         start=$(date +%s.%N)
-        timeout 5 bash solvers/$solver/run.sh db/inputs/$rng.smt2 > db/data/$rng.$solver.out 2> db/data/$rng.$solver.err </dev/null
+        timeout 2500 bash solvers/$solver/run.sh db/inputs/$rng.smt2 &> db/data/$rng.$solver.out
         dur=$(echo "$(date +%s.%N) - $start" | bc)
+	echo "-------------------" >> db/data/$rng.$solver.out
+	echo $dur >> db/data/$rng.$solver.out
 done
 deactivate
+rm core*; rm filtered_file*;
