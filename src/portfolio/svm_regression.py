@@ -14,7 +14,7 @@ class SVM_Regression(Portfolio):
         return 'SVM_Regression'
 
     def train(self,inputs):
-        for solver in list(inputs[0].times.keys()):
+        for solver in settings.solvers:
             train_features = []
             train_labels = []
             for inp in inputs:
@@ -27,10 +27,8 @@ class SVM_Regression(Portfolio):
             self.models[solver] = svm_train(train_labels,train_features, "-s 4 -t 2 ")
 
     def predict(self,inputs):
-        solvers = list(inputs[0].times.keys())
-        predictions = {}
         times = []
-        for solver in solvers:
+        for solver in settings.solvers:
             test_features = []
             test_labels = []
             for inp in inputs:
@@ -46,9 +44,9 @@ class SVM_Regression(Portfolio):
         ret = []
         for i in range(len(inputs)):
             pred = []
-            for j in range(len(solvers)):
+            for j in range(len(settings.solvers)):
                 pred.append(times[j][i])
-            ret.append(solvers[pred.index(min(pred))])
+            ret.append(settings.solvers[pred.index(min(pred))])
         return ret
 
         

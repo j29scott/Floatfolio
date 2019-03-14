@@ -1,0 +1,3 @@
+solvers/colibri/run.sh: line 2: 212688 Killed                  ./solvers/colibri/colibri_2073/bin/colibri $1
+-------------------
+1569.206987165

@@ -1,0 +1,6 @@
+system interface error: No such file or directory in open(filtered_file_240122, read, _4003)
+output error: Disk quota exceeded in flush(error)
+ERROR(db/inputs/356617334311832038245674351459830837.smt2) : abort
+unknown
+-------------------
+6.391088911

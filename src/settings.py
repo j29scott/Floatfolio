@@ -1,5 +1,7 @@
 
-timeout=60
+timeout=2500
+
+solvers = ['z3', 'mathsat', 'cvc4','colibri']
 
 SolverLabels = {
     'z3': 0.0,

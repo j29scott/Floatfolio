@@ -11,10 +11,10 @@ class Linear_Regression(Portfolio):
         self.models = {}
 
     def __name__(self):
-        return 'Linear_Regression'
+        return 'Portfolio #1'
 
     def train(self,inputs):
-        for solver in list(inputs[0].times.keys()):
+        for solver in settings.solvers:
             train_features = []
             train_labels = []
             for inp in inputs:
@@ -27,7 +27,7 @@ class Linear_Regression(Portfolio):
             self.models[solver] = LinearRegression().fit(train_features, train_labels)
 
     def predict(self,inputs):
-        solvers = list(inputs[0].times.keys())
+        solvers = settings.solvers
         predictions = {}
         times = []
         for solver in solvers:

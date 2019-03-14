@@ -1,0 +1,8 @@
+(set-logic QF_FP)
+(declare-const x0 (_ FloatingPoint 8 24))
+(declare-const x1 (_ FloatingPoint 8 24))
+(declare-const x2 (_ FloatingPoint 8 24))
+(declare-const x3 (_ FloatingPoint 8 24))
+(assert (fp.eq (fp.add RNE x3 x1) (fp.neg x1)))
+(assert (fp.gt (fp.add RNE x2 x3) (fp.add RNE x2 x3)))
+(check-sat)

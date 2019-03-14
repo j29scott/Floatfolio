@@ -19,7 +19,7 @@ class Logistic_Regression(Portfolio):
         for inp in inputs:
             train_features.append(inp.features)
             train_labels.append(settings.SolverLabels[inp.best_solver])
-        self.model = LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial').fit(train_features, train_labels)
+        self.model = LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial',max_iter=5000).fit(train_features, train_labels)
 
     def predict(self,inputs):
         test_features = []
