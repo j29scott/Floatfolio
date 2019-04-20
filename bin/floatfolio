@@ -10,13 +10,12 @@ import pdb
 import pylab as plt
 import src.input
 from src.portfolio.rand import Rand
-from src.portfolio.svm_classify import SVM_Classify
-from src.portfolio.svm_regression import SVM_Regression
-from src.portfolio.linear_regression import Linear_Regression
-from src.portfolio.logistic_regression import Logistic_Regression
 from src.portfolio.oracle import Oracle
-from src.portfolio.random_forest import Random_Forest
-from src.portfolio.doc2vec import Doc2Vec
+from src.portfolio.linear_regression import Linear_Regression
+from src.portfolio.ridge_regression import Ridge_Regression
+from src.portfolio.svm_regression import SVM_Regression
+from src.portfolio.knn_regression import KNN_Regression
+from src.portfolio.log_regression import Logistic_Regression
 import random
 
 
@@ -37,7 +36,7 @@ def scale_input_features(inputs):
 		for j in range(len(inputs[0].features)):
 			dev[j] += (inputs[i].features[j] - means[j]) * (inputs[i].features[j] - means[j])
 	for i in range(len(means)):
-		dev[i] = (dev[i]/len(inputs))** 0.5
+		dev[i] = (dev[i]/len(inputs)) ** 0.5
 
 	for i in range(len(inputs)):
 		for j in range(len(inputs[0].features)):
@@ -85,7 +84,8 @@ for solver in solvers:
 					plot_data[-1][0].append(test_inputs[i].times[solver])
 
 
-algorithms = [Rand,Oracle,Doc2Vec]
+#algorithms = [Rand,Oracle,Linear_Regression,SVM_Regression, SVM_Classify, Doc2Vec]
+algorithms = [Rand,Oracle,Linear_Regression,Ridge_Regression,SVM_Regression,KNN_Regression,Logistic_Regression]
 for alg in algorithms:
 		classifier = alg()
 		classifier.train(train_inputs)

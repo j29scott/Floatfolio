@@ -16,7 +16,10 @@ from sklearn.neural_network import MLPRegressor
 
 
 class Doc2Vec(Portfolio):
-    def __init__(self):
+    def __init__(self,dm = 1,vec_size=64, epochs=100):
+        self.dm = dm
+        self.vec_size = vec_size
+        self.epochs=100
         self.d2v = None
         self.models = {}
     def __name__(self):
@@ -28,10 +31,10 @@ class Doc2Vec(Portfolio):
             data.append(inputs[i].doc)
         alpha = 0.025
         min_alpha = 1e-4
-        max_epochs = 20
+        max_epochs = 100
         alpha_delta = (alpha - min_alpha) / (max_epochs - 1)
         docs = [TaggedDocument(doc, [i]) for i, doc in enumerate(data)]
-        self.d2v = doc2vec.Doc2Vec(docs, vector_size = 256, min_count = 1, epochs=max_epochs)
+        self.d2v = doc2vec.Doc2Vec(docs, vector_size=self.vec_size, min_count = 1, epochs=self.epochs,dm=self.dm)
         # self.d2v.build_vocab(docs)
         # for epoch in range(max_epochs):
         #     print('iteration {0}'.format(epoch))
@@ -98,5 +101,3 @@ class Doc2Vec(Portfolio):
                 pred.append(times[j][i])
             ret.append(settings.solvers[pred.index(min(pred))])
         return ret
-
-        
