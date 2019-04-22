@@ -1,21 +1,20 @@
 from src.portfolio.portfolio import Portfolio
 import src.settings as settings
 import random
-import pylab as plt
 import math
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import Perceptron
 import pdb
 
-class Logistic_Regression(Portfolio):
+class Perceptron_Classify(Portfolio):
     def __init__(self):
         super().__init__(classifier=True)
         self.cmodel = None
 
     def __name__(self):
-        return 'Logistic_Regression'
+        return 'Perceptron_Classify'
 
     def train_classify(self,features,labels):
-        self.cmodel = LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial').fit(features, labels)
+        self.cmodel = Perceptron(tol=1e-3, random_state=0).fit(features, labels)
 
     def predict_classify(self,features):
         return self.cmodel.predict(features)

@@ -16,6 +16,10 @@ from src.portfolio.ridge_regression import Ridge_Regression
 from src.portfolio.svm_regression import SVM_Regression
 from src.portfolio.knn_regression import KNN_Regression
 from src.portfolio.log_regression import Logistic_Regression
+from src.portfolio.svm_classify import SVM_Classify
+from src.portfolio.perceptron import Perceptron_Classify
+from src.portfolio.log_regression import Logistic_Regression
+from src.portfolio.sgd import SGD
 import random
 
 
@@ -45,7 +49,7 @@ def scale_input_features(inputs):
 			else:
 				inputs[i].features[j] = 0.0
 
-data_sets = ['bfuzz0']
+data_sets = ['smtlib']
 inputs = []
 for data_set in data_sets:
 		with open('benchmarks/benchmark_data/' + data_set + '.csv') as csvfile:
@@ -70,7 +74,7 @@ for data_set in data_sets:
 random.shuffle(inputs)
 print(len(inputs))
 scale_input_features(inputs)
-split = 0.85
+split = 0.5
 train_inputs = inputs[:round(split * len(inputs)) ]
 test_inputs  = inputs[round(split*len(inputs))+1:]
 
@@ -79,20 +83,30 @@ test_inputs  = inputs[round(split*len(inputs))+1:]
 plot_data = []
 solvers = list(test_inputs[0].times.keys())
 for solver in solvers:
-		plot_data.append([[],solver])
+		plot_data.append([[],solver,','])
 		for i in range(len(test_inputs)):
 					plot_data[-1][0].append(test_inputs[i].times[solver])
 
 
-#algorithms = [Rand,Oracle,Linear_Regression,SVM_Regression, SVM_Classify, Doc2Vec]
-algorithms = [Rand,Oracle,Linear_Regression,Ridge_Regression,SVM_Regression,KNN_Regression,Logistic_Regression]
-for alg in algorithms:
-		classifier = alg()
-		classifier.train(train_inputs)
-		predictions = classifier.predict(test_inputs)
-		plot_data.append([[],classifier.__name__()])
+benchmarks = [Rand,Oracle]
+regressors = [Linear_Regression,Ridge_Regression,SVM_Regression,KNN_Regression]
+classifiers = [Logistic_Regression,SVM_Classify,Perceptron_Classify,SGD]
+
+for alg in benchmarks + regressors + classifiers:
+		model = alg()
+		model.train(train_inputs)
+		predictions,conf_mat = model.predict(test_inputs)
+		if alg in benchmarks:
+			plot_data.append([[],model.__name__(),'|'])
+		elif alg in regressors:
+			plot_data.append([[],model.__name__(),'x'])
+		elif alg in classifiers:
+			plot_data.append([[],model.__name__(),'*'])
 		for i in range(len(test_inputs)):
-					plot_data[-1][0].append(test_inputs[i].times[predictions[i]])
+			plot_data[-1][0].append(test_inputs[i].times[predictions[i]])
+		print("Conf mat for " + model.__name__() + "\n")
+		print(conf_mat)
+		print("\n\n")
 
 
 for i in range(len(plot_data)):
@@ -100,7 +114,7 @@ for i in range(len(plot_data)):
 		while plot_data[i][0][-1] >= settings.timeout:
 					plot_data[i][0].pop()
 for i in range(len(plot_data)):
-		plt.plot(plot_data[i][0],label=plot_data[i][1])
+		plt.plot(plot_data[i][0],label=plot_data[i][1],marker=plot_data[i][2],markevery=round(len(plot_data[i][0])/50))
 
 plt.legend()
 plt.show()

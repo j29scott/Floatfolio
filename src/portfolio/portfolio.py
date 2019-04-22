@@ -14,7 +14,12 @@ class Portfolio:
 
     def train(self,inputs):
         if self.is_classifier:
-            self.train_classify(inputs)
+            features = []
+            labels = []
+            for inp in inputs:
+                features.append(inp.features)
+                labels.append(settings.SolverLabels[inp.best_solver])
+            self.train_classify(features,labels)
         else:
             for solver in settings.solvers:
                 features = []
@@ -28,8 +33,21 @@ class Portfolio:
                 self.train_regression(features,labels,solver)
 
     def predict(self,inputs):
+        conf_mat = {}
+        for s in settings.solvers:
+            conf_mat[s] = {}
+            for t in settings.solvers:
+                conf_mat[s][t] = 0                
+        ret = []
         if self.is_classifier:
-            test_classify(inputs)
+            features = []
+            labels = []
+            for inp in inputs:
+                features.append(inp.features)
+                labels.append(settings.SolverLabels[inp.best_solver])
+            pred = self.predict_classify(features)
+            for p in pred:
+                ret.append(settings.LabelsSolver[p])
         else:
             times = []
             for solver in settings.solvers:
@@ -43,18 +61,11 @@ class Portfolio:
                         labels.append(math.log(inp.times[solver]))
                 p = self.predict_regression(features,solver)
                 times.append(p)
-            ret = []
             for i in range(len(inputs)):
                 pred = []
                 for j in range(len(settings.solvers)):
                     pred.append(times[j][i])
                 ret.append(settings.solvers[pred.index(min(pred))])
-            return ret
-
-    @abstractmethod
-    def train_regression(self,features=None,lables=None,solver=None):
-        raise NotImplementedError("Must override methodB")
-
-    @abstractmethod
-    def test_regression(self,features=None,lables=None,solver=None):
-        raise NotImplementedError("Must override methodB")
+        for i in range(len(inputs)):
+            conf_mat[ret[i]][inputs[i].best_solver] += 1
+        return ret,conf_mat

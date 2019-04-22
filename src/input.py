@@ -41,9 +41,15 @@ class Input:
         self.doc = None
         self.documentize()
         self.times = time_dict
-
         self.best_solver = "NA"
         best_time = float('inf')
+
+        solvers_not_considered = []
+        for solver in self.times:
+            if solver not in settings.solvers:
+                solvers_not_considered.append(solver)
+        for solver in solvers_not_considered:
+            self.times.pop(solver)
         for solver in self.times:
             if self.times[solver] < best_time:
                 self.best_solver = solver

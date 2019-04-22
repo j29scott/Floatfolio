@@ -3,19 +3,19 @@ import src.settings as settings
 import random
 import pylab as plt
 import math
-from sklearn.linear_model import LogisticRegression
+from sklearn import svm
 import pdb
 
-class Logistic_Regression(Portfolio):
+class SVM_Classify(Portfolio):
     def __init__(self):
         super().__init__(classifier=True)
         self.cmodel = None
 
     def __name__(self):
-        return 'Logistic_Regression'
+        return 'SVM_Classify'
 
     def train_classify(self,features,labels):
-        self.cmodel = LogisticRegression(random_state=0, solver='lbfgs', multi_class='multinomial').fit(features, labels)
+        self.cmodel = svm.SVC(gamma='scale', decision_function_shape='ovo').fit(features, labels)
 
     def predict_classify(self,features):
         return self.cmodel.predict(features)
