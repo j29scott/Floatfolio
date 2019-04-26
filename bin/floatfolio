@@ -75,8 +75,8 @@ for data_set in data_sets:
 		scale_input_features(inputs[data_set])
 
 train_data_set = ['bfuzz0']
-test_data_set  = ['bfuzz0']
-split = 0.5
+test_data_set  = ['smtlib']
+split = 0.8
 train_inputs = []
 test_inputs = []
 for data_set in train_data_set:
@@ -129,7 +129,7 @@ for i in range(len(plot_data)):
 		while plot_data[i][0][-1] >= settings.timeout:
 					plot_data[i][0].pop()
 for i in range(len(plot_data)):
-		plt.plot(plot_data[i][0],label=plot_data[i][1],marker=plot_data[i][2],markevery=round(len(plot_data[i][0])/50))
+		plt.plot(plot_data[i][0],label=plot_data[i][1],marker=plot_data[i][2],markevery=20)
 
 plt.legend()
 plt.show()
