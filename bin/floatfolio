@@ -49,9 +49,10 @@ def scale_input_features(inputs):
 			else:
 				inputs[i].features[j] = 0.0
 
-data_sets = ['smtlib']
-inputs = []
+data_sets = ['smtlib','bfuzz0']
+inputs = {}
 for data_set in data_sets:
+		inputs[data_set] = []
 		with open('benchmarks/benchmark_data/' + data_set + '.csv') as csvfile:
 					reader = csv.reader(csvfile)
 					header = None
@@ -69,14 +70,28 @@ for data_set in data_sets:
 										else:
 											print(row[i])
 											sys.exit(0)
-								inputs.append(Input(row[0],time_dict))
+								inputs[data_set].append(Input(row[0],time_dict))
+		random.shuffle(inputs[data_set])
+		scale_input_features(inputs[data_set])
 
-random.shuffle(inputs)
-print(len(inputs))
-scale_input_features(inputs)
+train_data_set = ['bfuzz0']
+test_data_set  = ['bfuzz0']
 split = 0.5
-train_inputs = inputs[:round(split * len(inputs)) ]
-test_inputs  = inputs[round(split*len(inputs))+1:]
+train_inputs = []
+test_inputs = []
+for data_set in train_data_set:
+	if data_set in test_data_set:
+		train_inputs.extend(inputs[data_set][:round(split * len(inputs[data_set])) ])
+	else:
+		train_inputs.extend(inputs[data_set])
+for data_set in test_data_set:
+	if data_set in train_data_set:
+		test_inputs.extend(inputs[data_set][round(split*len(inputs[data_set]))+1:])
+	else:
+		test_inputs.extend(inputs[data_set])
+
+# train_inputs = inputs[:round(split * len(inputs)) ]
+# test_inputs  = inputs[round(split*len(inputs))+1:]
 
 
 
