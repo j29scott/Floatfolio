@@ -1,4 +1,5 @@
 from abc import ABC,ABCMeta, abstractmethod
+from sklearn import preprocessing
 import src.settings as settings
 import math
 import pdb
@@ -11,6 +12,7 @@ class Portfolio:
 
         self.rmodels = None
         self.cmodel = None
+        self.scaler = None
 
     def train(self,inputs):
         if self.is_classifier:
@@ -19,6 +21,9 @@ class Portfolio:
             for inp in inputs:
                 features.append(inp.features)
                 labels.append(settings.SolverLabels[inp.best_solver])
+            if self.scaler == None:
+                self.scaler = preprocessing.StandardScaler().fit(features)
+            features = self.scaler.transform(features)
             self.train_classify(features,labels)
         else:
             for solver in settings.solvers:
@@ -29,7 +34,10 @@ class Portfolio:
                     if(inp.times[solver]>= settings.timeout):
                         labels.append(3.0 * math.log(settings.timeout))
                     else:
-                        labels.append(math.log(inp.times[solver]))    
+                        labels.append(math.log(inp.times[solver]))
+                if self.scaler == None:
+                    self.scaler = preprocessing.StandardScaler().fit(features)
+                features = self.scaler.transform(features)  
                 self.train_regression(features,labels,solver)
 
     def predict(self,inputs):
@@ -45,6 +53,7 @@ class Portfolio:
             for inp in inputs:
                 features.append(inp.features)
                 labels.append(settings.SolverLabels[inp.best_solver])
+            features = self.scaler.transform(features)
             pred = self.predict_classify(features)
             for p in pred:
                 ret.append(settings.LabelsSolver[p])
@@ -59,6 +68,7 @@ class Portfolio:
                         labels.append(3.0 * math.log(settings.timeout))
                     else:
                         labels.append(math.log(inp.times[solver]))
+                features = self.scaler.transform(features)
                 p = self.predict_regression(features,solver)
                 times.append(p)
             for i in range(len(inputs)):

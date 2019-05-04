@@ -6,13 +6,13 @@ import math
 from sklearn.linear_model import SGDClassifier
 import pdb
 
-class SGD(Portfolio):
+class SGD_Classify(Portfolio):
     def __init__(self):
         super().__init__(classifier=True)
         self.cmodel = None
 
     def __name__(self):
-        return 'Stochastic_Gradiant_Decent'
+        return 'SGD_Classify'
 
     def train_classify(self,features,labels):
         self.cmodel = SGDClassifier(loss="hinge", penalty="l2", max_iter=5).fit(features, labels)

@@ -1,0 +1,66 @@
+Conf mat for Random
+
+{'z3': {'z3': 5182, 'cvc4': 302, 'colibri': 612, 'mathsat': 140}, 'cvc4': {'z3': 4987, 'cvc4': 316, 'colibri': 662, 'mathsat': 165}, 'colibri': {'z3': 5166, 'cvc4': 307, 'colibri': 608, 'mathsat': 145}, 'mathsat': {'z3': 5223, 'cvc4': 290, 'colibri': 656, 'mathsat': 140}}
+
+
+
+Conf mat for Oracle
+
+{'z3': {'z3': 20558, 'cvc4': 0, 'colibri': 0, 'mathsat': 0}, 'cvc4': {'z3': 0, 'cvc4': 1215, 'colibri': 0, 'mathsat': 0}, 'colibri': {'z3': 0, 'cvc4': 0, 'colibri': 2538, 'mathsat': 0}, 'mathsat': {'z3': 0, 'cvc4': 0, 'colibri': 0, 'mathsat': 590}}
+
+
+
+Conf mat for Linear_Regression
+
+{'z3': {'z3': 15684, 'cvc4': 7, 'colibri': 23, 'mathsat': 12}, 'cvc4': {'z3': 205, 'cvc4': 893, 'colibri': 1741, 'mathsat': 482}, 'colibri': {'z3': 333, 'cvc4': 201, 'colibri': 543, 'mathsat': 17}, 'mathsat': {'z3': 4336, 'cvc4': 114, 'colibri': 231, 'mathsat': 79}}
+
+
+
+Conf mat for Ridge_Regression
+
+{'z3': {'z3': 15684, 'cvc4': 7, 'colibri': 23, 'mathsat': 12}, 'cvc4': {'z3': 205, 'cvc4': 892, 'colibri': 1742, 'mathsat': 483}, 'colibri': {'z3': 333, 'cvc4': 202, 'colibri': 543, 'mathsat': 17}, 'mathsat': {'z3': 4336, 'cvc4': 114, 'colibri': 230, 'mathsat': 78}}
+
+
+
+Conf mat for SVM_Regression
+
+{'z3': {'z3': 19992, 'cvc4': 7, 'colibri': 20, 'mathsat': 22}, 'cvc4': {'z3': 265, 'cvc4': 799, 'colibri': 927, 'mathsat': 171}, 'colibri': {'z3': 266, 'cvc4': 372, 'colibri': 1502, 'mathsat': 335}, 'mathsat': {'z3': 35, 'cvc4': 37, 'colibri': 89, 'mathsat': 62}}
+
+
+
+Conf mat for KNN_Regression
+
+{'z3': {'z3': 20167, 'cvc4': 102, 'colibri': 161, 'mathsat': 25}, 'cvc4': {'z3': 128, 'cvc4': 511, 'colibri': 646, 'mathsat': 160}, 'colibri': {'z3': 210, 'cvc4': 452, 'colibri': 1333, 'mathsat': 246}, 'mathsat': {'z3': 53, 'cvc4': 150, 'colibri': 398, 'mathsat': 159}}
+
+
+
+Conf mat for NN_Regression
+
+{'z3': {'z3': 20014, 'cvc4': 61, 'colibri': 84, 'mathsat': 77}, 'cvc4': {'z3': 263, 'cvc4': 825, 'colibri': 1228, 'mathsat': 281}, 'colibri': {'z3': 225, 'cvc4': 140, 'colibri': 697, 'mathsat': 56}, 'mathsat': {'z3': 56, 'cvc4': 189, 'colibri': 529, 'mathsat': 176}}
+
+
+
+Conf mat for Logistic_Regression
+
+{'z3': {'z3': 20101, 'cvc4': 45, 'colibri': 298, 'mathsat': 29}, 'cvc4': {'z3': 22, 'cvc4': 49, 'colibri': 29, 'mathsat': 2}, 'colibri': {'z3': 432, 'cvc4': 1117, 'colibri': 2189, 'mathsat': 553}, 'mathsat': {'z3': 3, 'cvc4': 4, 'colibri': 22, 'mathsat': 6}}
+
+
+
+Conf mat for SVM_Classify
+
+{'z3': {'z3': 20215, 'cvc4': 52, 'colibri': 111, 'mathsat': 25}, 'cvc4': {'z3': 70, 'cvc4': 331, 'colibri': 135, 'mathsat': 49}, 'colibri': {'z3': 272, 'cvc4': 832, 'colibri': 2288, 'mathsat': 514}, 'mathsat': {'z3': 1, 'cvc4': 0, 'colibri': 4, 'mathsat': 2}}
+
+
+
+Conf mat for Perceptron_Classify
+
+{'z3': {'z3': 20025, 'cvc4': 109, 'colibri': 310, 'mathsat': 76}, 'cvc4': {'z3': 64, 'cvc4': 297, 'colibri': 502, 'mathsat': 122}, 'colibri': {'z3': 435, 'cvc4': 736, 'colibri': 1458, 'mathsat': 259}, 'mathsat': {'z3': 34, 'cvc4': 73, 'colibri': 268, 'mathsat': 133}}
+
+
+
+Conf mat for NN_Classify
+
+{'z3': {'z3': 19983, 'cvc4': 3, 'colibri': 6, 'mathsat': 20}, 'cvc4': {'z3': 0, 'cvc4': 0, 'colibri': 0, 'mathsat': 0}, 'colibri': {'z3': 575, 'cvc4': 1212, 'colibri': 2532, 'mathsat': 570}, 'mathsat': {'z3': 0, 'cvc4': 0, 'colibri': 0, 'mathsat': 0}}
+
+
+
