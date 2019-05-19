@@ -1,6 +1,8 @@
 
 timeout=2500
 
+portfolio_is_live = False
+
 solvers = ['z3', 'mathsat', 'cvc4','colibri']
 
 SolverLabels = {
