@@ -1,3 +1,0 @@
-solvers/cvc4/run.sh: line 2: 28131 Killed                  ./solvers/cvc4/cvc4 $1 --lang smt
--------------------
-1380.557967668

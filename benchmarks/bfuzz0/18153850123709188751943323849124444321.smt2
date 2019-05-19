@@ -1,5 +1,0 @@
-(set-logic QF_FP)
-(declare-const x0 (_ FloatingPoint 11 53))
-(declare-const x1 (_ FloatingPoint 11 53))
-(assert (fp.eq (fp.neg x1) (fp.neg x1)))
-(check-sat)

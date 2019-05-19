@@ -1,5 +1,0 @@
-system interface error: No such file or directory in open(filtered_file_80007, read, _4004)
-ERROR(db/inputs/1582222875283672738029384256662252510528.smt2) : abort
-unknown
--------------------
-15.760474188

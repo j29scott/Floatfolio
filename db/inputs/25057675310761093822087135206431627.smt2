@@ -1,8 +1,0 @@
-(set-logic QF_FP)
-(declare-const x0 (_ FloatingPoint 11 53))
-(declare-const x1 (_ FloatingPoint 11 53))
-(assert (fp.eq (fp.mul RNE x0 x1) (fp.div RNE x1 x0)))
-(assert (fp.leq (fp.mul RNE x1 x1) (fp.mul RNE x1 x1)))
-(assert (fp.leq (fp.neg x1) (fp.div RNE x1 x1)))
-(assert (fp.geq (fp.neg x1) (fp.sub RNE x1 x1)))
-(check-sat)

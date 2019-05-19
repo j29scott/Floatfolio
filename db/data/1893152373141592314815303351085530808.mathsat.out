@@ -1,3 +1,0 @@
-solvers/mathsat/run.sh: line 2: 45861 Killed                  ./solvers/mathsat/mathsat5.5.3 $1
--------------------
-2068.286112508
