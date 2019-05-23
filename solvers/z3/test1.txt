@@ -1,3 +1,0 @@
-this is
-text with
-multiple lines
