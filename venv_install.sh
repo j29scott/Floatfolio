@@ -18,3 +18,5 @@ for solver in $( ls  solvers/); do
     bash install.sh
     cd ../../
 done
+
+pip3 install scikit-learn==0.20.3
