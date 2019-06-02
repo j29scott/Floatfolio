@@ -1,2 +1,2 @@
 #!/bin/bash
-z3 -smt2 $1
+./solvers/z3/z3 -smt2 $1
