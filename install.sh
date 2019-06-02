@@ -1,5 +1,7 @@
 #!/bin/bash
-set -e
+set -
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd $DIR
 
 declare -a dependencies=("g++")
 for tool in "${dependencies[@]}"; do
@@ -14,4 +16,6 @@ for solver in $( ls  solvers/); do
     bash install.sh
     cd ../../
 done
+
+g++ -std=c++11 -O3 src/cpp/predict_knn.cc -o select_solver
 
