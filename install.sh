@@ -19,3 +19,5 @@ done
 
 g++ -std=c++11 -O3 src/cpp/predict_knn.cc -o select_solver
 
+echo "Floatfolio appears to have built successfully."
+
