@@ -26,7 +26,7 @@ int main(int argc, char** argv)
         Input inpt; inpt.read(fname);
         inputs.push_back(inpt);
     }
-    cout<<"Found " <<inputs.size() <<" inputs."<<endl;
+//    cout<<"Found " <<inputs.size() <<" inputs."<<endl;
     scale.transform(inputs);
     vector<vector<double>> pred = alg.predict(inputs);
     for(int i = 0; i < pred.size(); i++)

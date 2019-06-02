@@ -1,7 +1,2 @@
 #!/bin/bash
-apt-get install python3
-apt-get install pip3
-pip3 install numpy
-pip3 install scipy
-pip3 install sklearn
 

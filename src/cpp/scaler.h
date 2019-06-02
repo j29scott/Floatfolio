@@ -14,7 +14,8 @@ public:
         mean.clear(); dev.clear();
         if(fname != "")
         {
-            ifstream fin(fname.c_str());
+            ifstream fin;
+	    fin.open(fname.c_str());
             string line = "";
             while(getline(fin,line) && line == "");
             stringstream ss(line);
@@ -74,7 +75,8 @@ public:
 
     void save2file(string fname)
     {
-        ofstream fout = ofstream(fname.c_str());
+        ofstream fout;
+	fout.open(fname.c_str());
         for(int i = 0; i < mean.size(); i++)
             fout<<mean[i] << " ";
         fout<<"\n";
