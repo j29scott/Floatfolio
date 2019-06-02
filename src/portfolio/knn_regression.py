@@ -1,6 +1,7 @@
 from src.portfolio.portfolio import Portfolio
 import src.settings as settings
 import random
+import pylab as plt
 import math
 from sklearn.neighbors import KNeighborsRegressor
 import pdb
