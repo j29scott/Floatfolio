@@ -87,10 +87,12 @@ int main(int argc, char**argv)
     vector<double> s_time = {0.0, 0.0, 0.0, 0.0};
     
     int tot_correct=0;
+    vector<vector<int>> conf_mat (4,vector<int>(4,0));
     for(int i = 0; i < inputs.size(); i++)
     {
         int c = argmin(inputs[i].labels);
         int p = argmin(pred[i]);
+        conf_mat[c][p]++;
         if(p == c) tot_correct++;
         if(exp(inputs[i].labels[c]) <= 2400.0)
         {
@@ -118,4 +120,8 @@ int main(int argc, char**argv)
     {
         cout<<id2solver[i] <<": Solved " <<s_tot[i]<< " in " << s_time[i]<<endl;
     }
+    for(int i = 0; i < 4; i++)
+        for(int j = 0; j < 4; j++)
+            cout<<conf_mat[i][j]<<" ";
+        cout<<endl;
 }

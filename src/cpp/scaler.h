@@ -15,7 +15,7 @@ public:
         if(fname != "")
         {
             ifstream fin;
-	    fin.open(fname.c_str());
+	        fin.open(fname.c_str());
             string line = "";
             while(getline(fin,line) && line == "");
             stringstream ss(line);
@@ -25,7 +25,6 @@ public:
             while(getline(fin,line) && line == "");
             stringstream ss2(line);
             while(ss2>>d) dev.push_back(d);
-
         }
     }
 

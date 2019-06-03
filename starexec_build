@@ -1,2 +1,23 @@
 #!/bin/bash
-bash install.sh
+chmod -R 755 *
+
+
+echo "Test #2 (expecting sat)"
+echo $(bash solvers/z3/run.sh tests/test2.smt2)
+echo $(bash solvers/mathsat/run.sh tests/test2.smt2)
+echo $(bash solvers/cvc4/run.sh tests/test2.smt2)
+echo $(bash solvers/colibri/run.sh tests/test2.smt2)
+echo ""
+
+echo "Test #3 (expecting unsat)"
+echo $(bash solvers/z3/run.sh tests/test3.smt2)
+echo $(bash solvers/mathsat/run.sh tests/test3.smt2)
+echo $(bash solvers/cvc4/run.sh tests/test3.smt2)
+echo $(bash solvers/colibri/run.sh tests/test3.smt2)
+echo ""
+
+echo "Testing select_solver (expecing in order: z3,mathsat,cvc4,colibri)"
+echo $(time ./select-solver tests/test.smt2 </dev/null )
+echo $(time ./select-solver tests/sqrt.c.10.smt2 </dev/null )
+echo $(time ./select-solver tests/sqrt.c.25.smt2 </dev/null )
+echo $(time ./select-solver tests/newton_1_3_true-unreach-call-main.smt2 </dev/null )

@@ -16,13 +16,13 @@ double dist(const vector<double>&a,const vector<double>&b)
     {
         ret += (a[i] -b[i]) * (a[i] -b[i]);
     }
-    return sqrt(ret);
+    return pow(ret,double(1.0/a.size()));
 }
 
 class KNN
 {
     public:
-    int K=5;
+    int K=1;
     void fit(const vector<Input> &train_set)
     {
         points.clear(); labels.clear();
@@ -40,16 +40,16 @@ class KNN
         timer.tic();
         auto start = std::chrono::system_clock::now();
         for(int i = 0; i < test_inputs.size(); i++) {
-            if(i%100 == 0 && i != 0)
+            if(i%100 == 0 && i)
             {
                 cout<<"PREDICTING (" <<i<<"/"<<points.size()<<") at " << (100.0/timer.toc()) <<endl <<flush;
                 timer.tic();
             }
             vector<double> slvr_pred;
             map<double,vector<int>> dist_data;
-            for(int p = 0; p < labels[0].size(); p++){
-                for(int j = 0; j < test_inputs.size(); j++) {
-                    double d = dist(points[i],test_inputs[j].features);
+            for(int s = 0; s < labels[0].size(); s++){
+                for(int j = 0; j < points.size(); j++) {
+                    double d = dist(points[j],test_inputs[i].features);
                     if(dist_data.count(d) == 0) {
                         dist_data.insert(make_pair(d,vector<int>()));
                     }
@@ -62,7 +62,7 @@ class KNN
                     if(k >= K) break; //could be more than k
                     // for(int j = 0; j < it->second.size(); j++)
                     //     val += labels[it->first[j]];
-                    val += it->first * it->second.size(); 
+                    val += labels[it->second[0]][s] * it->second.size(); 
                     k += it->second.size();
                 }
                 slvr_pred.push_back(val/k);
